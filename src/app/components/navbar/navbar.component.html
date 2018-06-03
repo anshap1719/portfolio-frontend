@@ -1,0 +1,15 @@
+<nav>
+  <div class="horizontal-flex justify-between align-center">
+    <div class="logo" [class.home]="isHome" [@heroState]="animationState">
+      <img src="/assets/logo.png" alt="">
+      <div class="content" [class.home]="isHome">
+        <a class="home" [routerLink]="['/home']">Continue to Website</a>
+      </div>
+    </div>
+    <div class="links" [class.home]="isHome">
+      <a class="home" [routerLink]="['/home']">Home</a>
+      <a class="home" [routerLink]="['/about']">About</a>
+      <a class="home" [routerLink]="['/contact']">Contact</a>
+    </div>
+  </div>
+</nav>

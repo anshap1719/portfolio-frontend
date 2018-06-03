@@ -1,0 +1,81 @@
+div.square-with-bg {
+  width: 100%;
+  padding-top: 62.5%;
+  position: relative;
+  -webkit-background-size: cover;
+  background-size: cover;
+
+
+  .title {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    color: #fff;
+  }
+
+  p.description {
+    opacity: 0;
+    font-size: 14px;
+    line-height: 22.4px;
+    font-family: 'Titilium Web', sans-serif;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    text-align: justify;
+    transition: background-color 0.2s linear;
+    background-color: rgba(0,0,0,0);
+  }
+
+  &:hover {
+    transform: scale(0.6);
+    transition: all 0.2s linear;
+
+    p.description {
+      opacity: 1;
+      transition: background-color 0.2s linear;
+      background-color: rgba(0,0,0,0.8);
+    }
+  }
+}
+
+.list-item {
+  width: 50%;
+  display: inline-block;
+
+  div.square-with-bg {
+    transform: scale(1);
+    transition: all 0.2s linear;
+  }
+
+  &:not(:first-of-type):hover {
+    div.square-with-bg {
+      transform: scale(0.9);
+      transition: all 0.2s linear;
+      cursor: pointer;
+    }
+  }
+
+  &:nth-of-type(2n+1) {
+    position: relative;
+    top: calc(20vw * -0.625);
+  }
+
+  &, .title {
+    margin: 0;
+    font-size: 60px;
+  }
+}
+
+.item-list {
+  max-width: 80vw;
+  margin: auto;
+  font-size: 0;
+}

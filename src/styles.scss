@@ -1,1 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background: #b61924 no-repeat 50% 50%;
+}
+
+* {
+  box-sizing: border-box !important;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  height: 20px;
+  width: 100px;
+}
+
+.horizontal-flex {
+  display: flex;
+  flex-wrap: nowrap;
+
+  &.wrap {
+    flex-wrap: wrap;
+  }
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: 700;
+}
+
+.animated {
+  visibility: visible !important;
+}
+
+.hide-on-init {
+  visibility: hidden;
+}
