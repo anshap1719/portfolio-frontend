@@ -43,10 +43,15 @@ export class StateService {
       }
     });
     this.router.events.subscribe(value => {
-      if (value instanceof NavigationEnd && this.once !== 0) {
-        setTimeout(() => {
-          this.granim.changeState(value.url.replace('/', ''));
-        }, 1000);
+      if (value instanceof NavigationEnd) {
+        if (value.url.indexOf('home') !== -1 && this.once === 0) {
+          this.once++;
+          return;
+        } else {
+          setTimeout(() => {
+            this.granim.changeState(value.url.replace('/', ''));
+          }, 1000);
+        }
       }
       this.once++;
     });
