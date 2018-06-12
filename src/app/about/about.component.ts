@@ -35,7 +35,6 @@ export class AboutComponent implements OnInit {
     })
       .setPin('#left1')
       .duration(this.getSectionHeight(this.right1))
-      .addIndicators()
       .addTo(controller);
     this.scenes.push(scene);
 
@@ -46,7 +45,6 @@ export class AboutComponent implements OnInit {
     })
       .setPin('#left2')
       .duration(this.getSectionHeight(this.right2))
-      .addIndicators()
       .addTo(controller);
     this.scenes.push(scene2);
     const scene3 = new ScrollMagic.Scene({
@@ -56,7 +54,6 @@ export class AboutComponent implements OnInit {
     })
       .setPin('#left3')
       .duration(this.getSectionHeight(this.right3))
-      .addIndicators()
       .addTo(controller);
     this.scenes.push(scene3);
 
@@ -67,7 +64,6 @@ export class AboutComponent implements OnInit {
     })
       .setPin('#left4')
       .duration(this.getSectionHeight(this.right4))
-      .addIndicators()
       .addTo(controller);
     this.scenes.push(scene4);
   }
