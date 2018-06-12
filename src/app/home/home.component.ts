@@ -19,5 +19,8 @@ export class HomeComponent implements OnInit {
         this.isHome = Boolean(value.url === '/');
       }
     });
+    if (this.router.url === '/') {
+      this.router.navigate(['/home']);
+    }
   }
 }

@@ -11,7 +11,6 @@ import {animations} from './my-info.animations';
 export class MyInfoComponent implements OnInit {
   isHome;
   name: string;
-  animationState = 'inactive';
   urlState = 'home';
   animateImage = false;
   animateText = false;
@@ -20,22 +19,24 @@ export class MyInfoComponent implements OnInit {
 
   ngOnInit() {
     this.isHome = Boolean(this.router.url === '/');
-    this.animationState = Boolean(this.router.url === '/') ? 'active' : 'inactive';
+    this.urlState = this.router.url.split('/')[1];
+    if (this.urlState === 'about') {
+      this.changeAnimateTextState({ toState: 'about' });
+      this.changeAnimateImageState({ toState: 'about' });
+    }
     this.router.events.subscribe(value => {
       if (value instanceof NavigationEnd) {
         this.isHome = Boolean(value.url === '/');
-        this.animationState = Boolean(value.url === '/') ? 'active' : 'inactive';
-        this.urlState = value.url.replace('/', '');
+        this.urlState = value.url.split('/')[1];
       }
     });
   }
 
   changeAnimateImageState(event) {
-    this.animateImage = Boolean(event.toState === 'about');
+    this.animateImage = event.toState.indexOf('about') !== -1;
   }
 
   changeAnimateTextState(event) {
-    this.animateText = Boolean(event.toState === 'about');
+    this.animateText = event.toState.indexOf('about') !== -1;
   }
-
 }

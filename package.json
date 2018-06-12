@@ -20,11 +20,12 @@
     "@angular/platform-browser": "^6.0.3",
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/router": "^6.0.3",
-    "animate.css": "^3.6.1",
     "core-js": "^2.5.4",
-    "ng2-animate-on-scroll": "^1.0.8",
-    "particles.js": "^2.0.0",
+    "granim": "^1.1.1",
+    "ng-scrollreveal": "^2.2.0",
     "rxjs": "^6.0.0",
+    "scrollmagic": "^2.0.5",
+    "scrollreveal": "^3.4.0",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
@@ -35,6 +36,7 @@
     "@types/jasmine": "~2.8.6",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
+    "@types/scrollreveal": "0.0.3",
     "codelyzer": "~4.2.1",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",

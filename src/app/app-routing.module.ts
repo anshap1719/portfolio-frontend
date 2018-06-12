@@ -1,5 +1,6 @@
 import {ModuleWithProviders} from '@angular/core';
 import {Route, RouterModule} from '@angular/router';
+import {EmptyComponent} from './components/empty/empty.component';
 
 const routes: Route[] = [
   {
@@ -16,7 +17,7 @@ const routes: Route[] = [
   },
   {
     path: '',
-    loadChildren: 'src/app/home/home.module#HomeModule'
+    component: EmptyComponent
   }
 ];
 

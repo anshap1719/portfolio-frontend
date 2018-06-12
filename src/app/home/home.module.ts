@@ -5,18 +5,20 @@ import {routing} from './home-routing.module';
 import {HomeComponent} from './home.component';
 import {PortfoliosComponent} from './portfolios/portfolios.component';
 import {RouterModule} from '@angular/router';
-import {AnimateOnScrollModule} from 'ng2-animate-on-scroll';
+import {NgsRevealModule} from 'ng-scrollreveal';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
-    AnimateOnScrollModule.forRoot(),
+    NgsRevealModule,
     routing
   ],
   declarations: [
     HomeComponent,
     PortfoliosComponent
+  ],
+  providers: [
   ]
 })
 export class HomeModule { }

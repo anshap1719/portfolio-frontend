@@ -1,8 +1,17 @@
-<div class="horizontal-flex align-center" [@heroState]="animationState">
+<div class="horizontal-flex align-center hide-on-init" ngsReveal>
   <div class="image" [@image]="urlState" (@image.start)="changeAnimateImageState($event)">
     <img src="/assets/me.png" alt="" [@animateImage]="animateImage">
   </div>
   <div class="content" [@text]="urlState" (@text.start)="changeAnimateTextState($event)">
-    <h1 [@animateText]="animateText">Anshul Sanghi<br><span [@animateText]="animateText">Consultant | Freelancer | Student</span></h1>
+    <div class="outer">
+      &nbsp;
+      <div class="inner">
+        <div [class.left]="!animateText" [class.center]="animateText">
+          <h1>Anshul Sanghi</h1>
+        </div>
+      </div>
+    </div>
+    <br>
+    <h1><span>Consultant | Student | Freelancer</span></h1>
   </div>
 </div>

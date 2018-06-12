@@ -1,10 +1,10 @@
 <div class="item-list">
-  <div class="list-item hide-on-init" animateOnScroll animationName="animated fadeInUp" offset="100">
+  <div class="list-item hide-on-init" ngsReveal>
     <div class="square-with-bg">
       <h1 class="title">My Work</h1>
     </div>
   </div>
-  <div class="list-item hide-on-init" *ngFor="let item of items" animateOnScroll animationName="animated fadeInUp" offset="100">
+  <div class="list-item hide-on-init" *ngFor="let item of items" ngsReveal>
     <div class="square-with-bg" [style.background-image]="'url(\'' + item.image + '\')'">
       <p class="description">{{ item.description }}</p>
     </div>

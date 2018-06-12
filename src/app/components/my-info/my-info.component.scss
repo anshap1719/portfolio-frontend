@@ -25,3 +25,34 @@ h1 {
     font-size: 40px;
   }
 }
+
+.outer {
+  height: 40px;
+  margin: 10px 0;
+  position: relative;
+}
+.inner > div {
+  position: absolute;
+  line-height: 40px;
+  top: 0;
+  white-space: nowrap;
+  -moz-transition: all 0.4s linear;
+  -o-transition: all 0.4s linear;
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+
+  &.left {
+    left: 0;
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  &.center {
+    left: 50%;
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}

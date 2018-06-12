@@ -1,4 +1,4 @@
-<div id="particles-js"></div>
+<canvas id="granim-canvas" #granim></canvas>
 <app-navbar></app-navbar>
-<app-my-info></app-my-info>
+<app-my-info *ngIf="!isHome"></app-my-info>
 <router-outlet></router-outlet>
