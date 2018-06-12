@@ -15,7 +15,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   @ViewChild('granim') granimElement: ElementRef;
 
-  constructor(private router: Router, config: NgsRevealConfig, private granim: StateService) {
+  constructor(private router: Router, config: NgsRevealConfig) {
     config.duration = 1200;
     config.easing = 'cubic-bezier(0.6, 0.2, 0.1, 1)';
     config.distance = '200px';
@@ -28,9 +28,6 @@ export class AppComponent implements OnInit, AfterViewInit {
         this.isHome = this.router.url === '/';
       }
     });
-  }
-
-  ngAfterViewInit() {
-    this.granim.init(this.granimElement);
+    this.granim.element = this.granimElement;
   }
 }

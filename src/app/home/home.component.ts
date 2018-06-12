@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
+import {StateService} from '../services/state.service';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,7 @@ import {NavigationEnd, Router} from '@angular/router';
 export class HomeComponent implements OnInit {
   isHome;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private gramin: StateService) { }
 
   ngOnInit() {
     this.isHome = Boolean(this.router.url === '/');
@@ -22,5 +23,7 @@ export class HomeComponent implements OnInit {
     if (this.router.url === '/') {
       this.router.navigate(['/home']);
     }
+
+    this.gramin.init();
   }
 }

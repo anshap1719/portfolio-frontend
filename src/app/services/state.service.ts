@@ -8,13 +8,14 @@ declare var Granim: any;
 })
 export class StateService {
   granim;
+  element;
   once = 0;
 
   constructor(private router: Router) { }
 
-  init(element: ElementRef) {
+  init() {
     this.granim = new Granim({
-      element: element.nativeElement,
+      element: this.element.nativeElement,
       opacity: [1, 1],
       stateTransitionSpeed: 500,
       defaultStateName: 'home',
