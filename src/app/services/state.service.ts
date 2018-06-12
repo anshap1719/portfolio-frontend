@@ -8,6 +8,7 @@ declare var Granim: any;
 })
 export class StateService {
   granim;
+  once = 0;
 
   constructor(private router: Router) { }
 
@@ -42,11 +43,12 @@ export class StateService {
       }
     });
     this.router.events.subscribe(value => {
-      if (value instanceof NavigationEnd) {
+      if (value instanceof NavigationEnd && this.once !== 0) {
         setTimeout(() => {
           this.granim.changeState(value.url.replace('/', ''));
         }, 1000);
       }
+      this.once++;
     });
   }
 }
