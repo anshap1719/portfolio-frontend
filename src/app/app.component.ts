@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
 import {NgsRevealConfig} from 'ng-scrollreveal';
 import {StateService} from './services/state.service';
@@ -10,7 +10,7 @@ declare var Granim: any;
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   isHome: boolean;
 
   @ViewChild('granim') granimElement: ElementRef;
@@ -28,7 +28,9 @@ export class AppComponent implements OnInit {
         this.isHome = this.router.url === '/';
       }
     });
+  }
 
+  ngAfterViewInit() {
     this.granim.init(this.granimElement);
   }
 }
