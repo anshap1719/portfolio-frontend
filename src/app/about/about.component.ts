@@ -1,4 +1,5 @@
 import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
+import {StateService} from '../services/state.service';
 
 declare var ScrollMagic: any;
 
@@ -10,8 +11,9 @@ declare var ScrollMagic: any;
 export class AboutComponent implements OnInit {
 
   scenes = [];
+  textColor;
 
-  constructor() { }
+  constructor(private granim: StateService) { }
 
   @ViewChild('right1') right1: ElementRef;
   @ViewChild('right2') right2: ElementRef;
@@ -66,6 +68,10 @@ export class AboutComponent implements OnInit {
       .duration(this.getSectionHeight(this.right4))
       .addTo(controller);
     this.scenes.push(scene4);
+
+    this.granim.gradientChange.subscribe(colorDetails => {
+      this.textColor = colorDetails.colorsTo[1];
+    });
   }
 
   getSectionHeight(element: ElementRef): any {

@@ -1,4 +1,4 @@
-import {ElementRef, Injectable} from '@angular/core';
+import {ElementRef, EventEmitter, Injectable} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
 
 declare var Granim: any;
@@ -10,6 +10,7 @@ export class StateService {
   granim;
   element;
   once = 0;
+  gradientChange = new EventEmitter();
 
   constructor(private router: Router) { }
 
@@ -41,6 +42,9 @@ export class StateService {
           gradients: [ ['#FF4E50', '#F9D423'] ],
           loop: false
         }
+      },
+      onGradientChange: colorDetails => {
+        this.gradientChange.emit(colorDetails);
       }
     });
     this.router.events.subscribe(value => {
@@ -54,7 +58,6 @@ export class StateService {
           }, 1000);
         }
       }
-      this.once++;
     });
   }
 }
