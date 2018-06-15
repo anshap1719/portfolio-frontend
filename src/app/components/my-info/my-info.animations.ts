@@ -6,7 +6,7 @@ export const animations = [
       transform: 'translate(0, 0)',
     })),
     state('about',   style({
-      transform: 'translate(calc(26vw + 30px), -50px)',
+      transform: 'translate(calc(28.08vw), -50px)',
     })),
     state('contact',   style({
       transform: 'translate(0, 400px)',
@@ -20,7 +20,7 @@ export const animations = [
     })),
     state('about',   style({
       marginTop: '70px',
-      transform: 'translate(calc(-10vw - 12px), 0) scale(0.4)',
+      transform: 'translate(calc(-10.833vw), 0) scale(0.4)',
       textAlign: 'center'
     })),
     state('contact',   style({

@@ -12,6 +12,15 @@ export class AboutComponent implements OnInit {
 
   scenes = [];
   textColor;
+  showSkills;
+  barColor;
+  countUp = {
+    useEasing: false,
+    useGrouping: true,
+    separator: ',',
+    suffix: '+'
+  };
+  showCounts = false;
 
   constructor(private granim: StateService) { }
 
@@ -29,6 +38,17 @@ export class AboutComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.initScrollmagic();
+    setTimeout(() => {
+      this.showCounts = true;
+    }, 1500);
+  }
+
+  getSectionHeight(element: ElementRef): any {
+    return <any>window.getComputedStyle(element.nativeElement).height.split('px')[0] - window.innerHeight + 40;
+  }
+
+  initScrollmagic() {
     const controller = new ScrollMagic.Controller();
     const scene = new ScrollMagic.Scene({
       triggerElement: '#left1',
@@ -56,6 +76,7 @@ export class AboutComponent implements OnInit {
     })
       .setPin('#left3')
       .duration(this.getSectionHeight(this.right3))
+      .on('end', event => this.showSkills = event.scrollDirection === 'FORWARD')
       .addTo(controller);
     this.scenes.push(scene3);
 
@@ -71,11 +92,8 @@ export class AboutComponent implements OnInit {
 
     this.granim.gradientChange.subscribe(colorDetails => {
       this.textColor = colorDetails.colorsTo[1];
+      this.barColor = colorDetails.colorsTo;
     });
-  }
-
-  getSectionHeight(element: ElementRef): any {
-    return <any>window.getComputedStyle(element.nativeElement).height.split('px')[0] - window.innerHeight + 40;
   }
 
 }

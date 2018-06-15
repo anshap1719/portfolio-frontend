@@ -1,0 +1,175 @@
+<div class="skills">
+  <ul class="lines" *ngIf="showSkills">
+    <li class="line l--0">
+      <span class="line__label title">
+        Skill level
+      </span>
+    </li>
+    <li class="line l--25">
+      <span class="line__label">
+        The basics
+      </span>
+    </li>
+    <li class="line l--50">
+      <span class="line__label">
+        Advanced
+      </span>
+    </li>
+    <li class="line l--75">
+      <span class="line__label">
+        Seasoned
+      </span>
+    </li>
+    <li class="line l--100">
+      <span class="line__label">
+        Expert
+      </span>
+    </li>
+  </ul>
+
+  <div class="charts" *ngIf="showSkills">
+    <div class="chart chart--dev">
+      <span class="chart__title">Development</span>
+      <ul class="chart--horiz">
+        <li class="chart__bar" style="width: 98%;"
+            [style.background-color]="barColor[1]" [style.transition]="'background-color 2s'">
+          <span class="chart__label">
+            HTML5
+          </span>
+        </li>
+        <li class="chart__bar" style="width: 93%;"
+            [style.background-color]="barColor[1]" [style.transition]="'background-color 2s'">
+          <span class="chart__label">
+            CSS3 & SCSS
+          </span>
+        </li>
+        <li class="chart__bar" style="width: 82%;"
+            [style.background-color]="barColor[1]" [style.transition]="'background-color 2s'">
+          <span class="chart__label">
+            JavaScript
+          </span>
+        </li>
+        <li class="chart__bar" style="width: 68%;"
+            [style.background-color]="barColor[1]" [style.transition]="'background-color 2s'">
+          <span class="chart__label">
+            Angular 2/4/5/6
+          </span>
+        </li>
+        <li class="chart__bar" style="width: 53%;"
+            [style.background-color]="barColor[1]" [style.transition]="'background-color 2s'">
+          <span class="chart__label">
+            TypeScript
+          </span>
+        </li>
+        <li class="chart__bar" style="width: 88%;"
+            [style.background-color]="barColor[1]" [style.transition]="'background-color 2s'">
+          <span class="chart__label">
+            jQuery
+          </span>
+        </li>
+        <li class="chart__bar" style="width: 55%;"
+            [style.background-color]="barColor[1]" [style.transition]="'background-color 2s'">
+          <span class="chart__label">
+            NodeJS
+          </span>
+        </li>
+        <li class="chart__bar" style="width: 30%;"
+            [style.background-color]="barColor[1]" [style.transition]="'background-color 2s'">
+          <span class="chart__label">
+            KnockoutJS
+          </span>
+        </li>
+        <li class="chart__bar" style="width: 50%;"
+            [style.background-color]="barColor[1]" [style.transition]="'background-color 2s'">
+          <span class="chart__label">
+            Grunt / Gulp / Webpack
+          </span>
+        </li>
+        <li class="chart__bar" style="width: 70%;"
+            [style.background-color]="barColor[1]" [style.transition]="'background-color 2s'">
+          <span class="chart__label">
+            Golang
+          </span>
+        </li>
+        <li class="chart__bar" style="width: 60%;"
+            [style.background-color]="barColor[1]" [style.transition]="'background-color 2s'">
+          <span class="chart__label">
+            MongoDB
+          </span>
+        </li>
+        <li class="chart__bar" style="width: 60%;"
+            [style.background-color]="barColor[1]" [style.transition]="'background-color 2s'">
+          <span class="chart__label">
+            Firebase
+          </span>
+        </li>
+        <li class="chart__bar" style="width: 51%;"
+            [style.background-color]="barColor[1]" [style.transition]="'background-color 2s'">
+          <span class="chart__label">
+            Unit Testing
+          </span>
+        </li>
+        <li class="chart__bar" style="width: 62%;"
+            [style.background-color]="barColor[1]" [style.transition]="'background-color 2s'">
+          <span class="chart__label">
+            Swift
+          </span>
+        </li>
+        <li class="chart__bar" style="width: 90%;"
+            [style.background-color]="barColor[1]" [style.transition]="'background-color 2s'">
+          <span class="chart__label">
+            Bootstrap
+          </span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="chart chart--prod" *ngIf="showSkills">
+      <span class="chart__title">Tools & DevOps</span>
+      <ul class="chart--horiz">
+        <li class="chart__bar" style="width: 89%;"
+            [style.background-color]="barColor[1]" [style.transition]="'background-color 2s'">
+          <span class="chart__label">
+            Git + Github, Bitbucket & Gitlab
+          </span>
+        </li>
+        <li class="chart__bar" style="width: 34%;"
+            [style.background-color]="barColor[1]" [style.transition]="'background-color 2s'">
+          <span class="chart__label">
+            CD/CI
+          </span>
+        </li>
+        <li class="chart__bar" style="width: 34%;"
+            [style.background-color]="barColor[1]" [style.transition]="'background-color 2s'">
+          <span class="chart__label">
+            Docker
+          </span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="chart chart--design" *ngIf="showSkills">
+      <span class="chart__title">Design</span>
+      <ul class="chart--horiz">
+        <li class="chart__bar" style="width: 67%;"
+            [style.background-color]="barColor[1]" [style.transition]="'background-color 2s'">
+        <span class="chart__label">
+          Photoshop
+        </span>
+        </li>
+        <li class="chart__bar" style="width: 40%;"
+            [style.background-color]="barColor[1]" [style.transition]="'background-color 2s'">
+        <span class="chart__label">
+          Illustrator
+        </span>
+        </li>
+        <li class="chart__bar" style="width: 30%;"
+            [style.background-color]="barColor[1]" [style.transition]="'background-color 2s'">
+        <span class="chart__label">
+          Sketch
+        </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

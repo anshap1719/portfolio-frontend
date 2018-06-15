@@ -1,3 +1,19 @@
+<div class="count-up" ngsReveal *ngIf="showCounts">
+  <div class="horizontal-flex justify-between">
+    <div class="vertical-flex">
+      <h1 [countUp]="countUp" [endVal]="1000" [duration]="3">0</h1>
+      <h2>Hours Worked</h2>
+    </div>
+    <div class="vertical-flex">
+      <h1 [countUp]="countUp" [endVal]="30000" [duration]="3">0</h1>
+      <h2>Lines Of Code Written</h2>
+    </div>
+    <div class="vertical-flex">
+      <h1 [countUp]="countUp" [endVal]="50" [duration]="3">0</h1>
+      <h2>Projects Completed</h2>
+    </div>
+  </div>
+</div>
 <div class="scroll-magic">
   <div class="left" id="left1">
     <h1 [style.color]="textColor">Introduction</h1>
@@ -58,7 +74,7 @@
     <h1>Technical Skills</h1>
   </div>
   <div class="right" id="right4" #right4>
-    <p>A very long content. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda at consequatur ex fugit itaque iure laudantium molestiae nesciunt officiis omnis qui quia, quidem, quisquam voluptate voluptates? Accusantium at impedit voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda cumque dolores ipsam libero maiores nobis sed voluptas? Asperiores enim, explicabo fugiat maiores nostrum quaerat ullam. Esse expedita facere porro quam.</p>
+    <app-skills [showSkills]="showSkills" [barColor]="barColor"></app-skills>
   </div>
 </div>
 
