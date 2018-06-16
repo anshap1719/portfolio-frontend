@@ -6,6 +6,7 @@ import {HomeComponent} from './home.component';
 import {PortfoliosComponent} from './portfolios/portfolios.component';
 import {RouterModule} from '@angular/router';
 import {NgsRevealModule} from 'ng-scrollreveal';
+import { TagComponent } from './portfolios/tag/tag.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import {NgsRevealModule} from 'ng-scrollreveal';
   ],
   declarations: [
     HomeComponent,
-    PortfoliosComponent
+    PortfoliosComponent,
+    TagComponent
   ],
   providers: [
   ]

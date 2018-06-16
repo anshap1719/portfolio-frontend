@@ -54,3 +54,29 @@ h1, h2, h3, h4, h5, h6 {
 .hide-on-init {
   visibility: hidden;
 }
+
+.about-content {
+  h1, h2, h3 {
+    color: #fff;
+    font-family: 'Roboto Slab', sans-serif;
+    margin: 10px 0;
+    transition: color 4s linear;
+    text-align: justify;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+
+  &.about-content-granim {
+    h1, h2, h3, p {
+      color: #fff;
+    }
+  }
+
+  &.about-content-white {
+    h1, h2, h3, p {
+      color: #1b1b1b;
+    }
+  }
+}

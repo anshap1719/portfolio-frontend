@@ -14,12 +14,6 @@ export class AboutComponent implements OnInit {
   textColor;
   showSkills;
   barColor;
-  countUp = {
-    useEasing: false,
-    useGrouping: true,
-    separator: ',',
-    suffix: '+'
-  };
   showCounts = false;
 
   constructor(private granim: StateService) { }
@@ -41,7 +35,7 @@ export class AboutComponent implements OnInit {
     this.initScrollmagic();
     setTimeout(() => {
       this.showCounts = true;
-    }, 1500);
+    }, 300);
   }
 
   getSectionHeight(element: ElementRef): any {
@@ -57,6 +51,7 @@ export class AboutComponent implements OnInit {
     })
       .setPin('#left1')
       .duration(this.getSectionHeight(this.right1))
+      .on('end', event => this.showSkills = event.scrollDirection === 'FORWARD')
       .addTo(controller);
     this.scenes.push(scene);
 
@@ -76,7 +71,6 @@ export class AboutComponent implements OnInit {
     })
       .setPin('#left3')
       .duration(this.getSectionHeight(this.right3))
-      .on('end', event => this.showSkills = event.scrollDirection === 'FORWARD')
       .addTo(controller);
     this.scenes.push(scene3);
 

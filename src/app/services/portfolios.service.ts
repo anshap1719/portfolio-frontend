@@ -6,46 +6,67 @@ import { Injectable } from '@angular/core';
 export class PortfoliosService {
   items = [
     {
-      title: 'Some Title',
+      title: 'Rolando Mathias\' Portfolio Website',
       description: 'Some Description',
       image: '/assets/rolando.png',
-      url: '/portfolio/something'
+      url: 'https://rolandomathi.as',
+      tags: ['HTML', 'CSS', 'JavaScript', 'Zeplin', 'Gulp']
     },
     {
-      title: 'Some Title',
+      title: 'Greater Commons',
       description: 'Some Description',
       image: '/assets/greatercommons.png',
-      url: '/portfolio/something'
+      url: 'https://greatercommons.com',
+      tags: ['HTML', 'CSS', 'JavaScript', 'Golang', 'Google Cloud Platform', 'Microservices']
     },
     {
-      title: 'Some Title',
+      title: 'Cactus',
       description: 'Some Description',
       image: '/assets/cactus.png',
-      url: '/portfolio/something'
+      url: 'https://cactus.is',
+      tags: ['HTML', 'CSS', 'JavaScript', 'jQuery', 'SquareSpace']
     },
     {
-      title: 'Some Title',
+      title: 'AdSpark',
       description: 'Some Description',
       image: '/assets/adspark.png',
-      url: '/portfolio/something'
+      url: 'https://adspark.ru',
+      tags: ['HTML', 'CSS', 'JavaScript', 'jQuery', 'Bootstrap']
     },
     {
-      title: 'Some Title',
+      title: 'Compute Vision - Similar Logo Finder',
       description: 'Some Description',
       image: '/assets/compute-vision.png',
-      url: '/portfolio/something'
+      url: 'http://compute.vision',
+      tags: ['HTML', 'CSS', 'JavaScript', 'BulmaCSS', 'KnockoutJS', 'Gulp']
     },
     {
-      title: 'Some Title',
+      title: 'Gamoloco',
       description: 'Some Description',
       image: '/assets/gamoloco.png',
-      url: '/portfolio/something'
+      url: 'https://gamoloco.com',
+      tags: ['Golang', 'MongoDB']
     },
     {
-      title: 'Some Title',
+      title: 'Adnut',
       description: 'Some Description',
       image: '/assets/adnut.png',
-      url: '/portfolio/something'
+      url: 'https://adnut.com',
+      tags: ['HTML', 'CSS', 'JavaScript', 'jQuery', 'Bootstrap', 'WordPress']
+    },
+    {
+      title: 'Red Contender',
+      description: 'Some Description',
+      image: '/assets/redcontender.png',
+      url: 'http://redcontentender.com',
+      tags: ['HTML', 'CSS', 'JavaScript', 'Angular 5', 'BulmaCSS']
+    },
+    {
+      title: 'Sample Angular 6 App',
+      description: 'Some Description',
+      image: '/assets/sample-app.png',
+      url: 'https://anshap1719.github.io/',
+      tags: ['HTML', 'CSS', 'JavaScript', 'Angular 6', 'Google Maps API']
     },
   ];
 

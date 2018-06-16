@@ -1,0 +1,22 @@
+.count-up {
+  margin: auto;
+
+  h1, h2 {
+    text-align: center;
+    font-family: 'Montserrat Alternates', sans-serif;
+  }
+
+  h1 {
+    font-size: 5.6em;
+  }
+
+  .vertical-flex {
+    flex: 0 0 33.333333%;
+  }
+}
+
+h1, h2, h3 {
+  color: #fff;
+  font-family: 'Roboto Slab', sans-serif;
+  margin: 10px 0;
+}

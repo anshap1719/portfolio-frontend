@@ -1,12 +1,17 @@
 <div class="item-list">
   <div class="list-item hide-on-init" ngsReveal>
     <div class="square-with-bg">
-      <h1 class="title">My Work</h1>
+      <h1 class="title">Featured Work</h1>
     </div>
   </div>
   <div class="list-item hide-on-init" *ngFor="let item of items" ngsReveal>
     <div class="square-with-bg" [style.background-image]="'url(\'' + item.image + '\')'">
-      <p class="description">{{ item.description }}</p>
+      <h2 class="description">{{ item.title }}</h2>
+      <div class="tags">
+        <div class="tag">
+          <app-tag [tags]="item.tags"></app-tag>
+        </div>
+      </div>
     </div>
   </div>
 </div>
