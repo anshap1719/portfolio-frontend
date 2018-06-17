@@ -26,6 +26,8 @@ export class AppComponent implements OnInit {
       if (value instanceof NavigationEnd) {
         this.isHome = this.router.url === '/';
         this.isAbout = this.router.url === '/about';
+        (<any>window).ga('set', 'page', value.urlAfterRedirects);
+        (<any>window).ga('send', 'pageview');
       }
     });
     this.granim.element = this.granimElement;
