@@ -19,8 +19,8 @@ export const animations = [
       textAlign: '*'
     })),
     state('about',   style({
-      marginTop: '70px',
-      transform: 'translate(calc(-10.833vw), 0) scale(0.4)',
+      marginTop: '10vh',
+      transform: 'translate(-10.833vw, 0) scale(0.4)',
       textAlign: 'center'
     })),
     state('contact',   style({

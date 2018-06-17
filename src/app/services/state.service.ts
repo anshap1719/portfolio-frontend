@@ -8,11 +8,37 @@ declare var Granim: any;
 })
 export class StateService {
   granim;
+  default;
   element;
   once = 0;
   gradientChange = new EventEmitter();
 
-  constructor(private router: Router) { }
+  constructor(router: Router) {
+    router.events.subscribe(value => {
+      if (value instanceof NavigationEnd) {
+        if (value.url.indexOf('home') !== -1) {
+          this.default = 'home';
+          if (this.granim) {
+            this.granim.changeState('home');
+          }
+        } else if (value.url.indexOf('about') !== -1) {
+          this.default = 'about';
+          if (this.granim) {
+            this.granim.changeState('about');
+          }
+        } else if (value.url.indexOf('contact') !== -1) {
+          this.default = 'contact';
+          if (this.granim) {
+            this.granim.changeState('contact');
+          }
+        }
+
+        if (!this.granim) {
+          this.init();
+        }
+      }
+    });
+  }
 
   init() {
     this.granim = new Granim({
@@ -47,17 +73,6 @@ export class StateService {
         this.gradientChange.emit(colorDetails);
       }
     });
-    this.router.events.subscribe(value => {
-      if (value instanceof NavigationEnd) {
-        if (value.url.indexOf('home') !== -1 && this.once === 0) {
-          this.once++;
-          return;
-        } else {
-          setTimeout(() => {
-            this.granim.changeState(value.url.replace('/', ''));
-          }, 1000);
-        }
-      }
-    });
+    this.granim.changeState(this.default);
   }
 }

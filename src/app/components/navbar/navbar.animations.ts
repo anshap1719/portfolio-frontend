@@ -6,7 +6,7 @@ export const animations = [
       transform: 'scale(1) translate(0, 0)'
     })),
     state('active',   style({
-      transform: 'scale(4) translate(calc((100vw - (200px * 3.488)) / 5), calc((100vh - 200px) / 8))'
+      transform: 'scale(4) translate(10.317312vw, 9.722225vh)'
     })),
     transition('inactive => active', animate('600ms ease-in')),
     transition('active => inactive', animate('600ms {{delay}}ms ease-out'))

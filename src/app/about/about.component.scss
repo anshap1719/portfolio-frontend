@@ -34,12 +34,14 @@ h1 {
     background-color: #fff;
     h1, h2, h3, p {
       color: #1b1b1b;
+      transition: color 3s;
     }
   }
 
   #left2, #right1, #left4, #right3 {
     h1, h2, h3, p {
       color: #fff;
+      transition: color 3s;
     }
   }
 

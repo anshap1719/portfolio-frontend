@@ -7,7 +7,7 @@
   margin: auto;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0,0,0,0.9);
+  background-color: rgba(0,0,0,0.95);
   padding: 5vh 2vw;
 
   * {
@@ -174,4 +174,8 @@
     top: 0;
     width: 70%;
   }
+}
+
+.lightbox {
+  opacity: 0;
 }

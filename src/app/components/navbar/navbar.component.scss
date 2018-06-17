@@ -1,22 +1,17 @@
 nav {
-  padding: 0 40px;
-  height: 100px;
+  padding: 0 2.77vw;
+  height: 6.9444vw;
   display: flex;
   align-items: center;
   > * {
-    flex: 0 0 calc(100% - 40px);
+    flex: 0 0 calc(100% - 2.7777vw);
   }
-}
-
-a {
-  font-family: 'Montserrat Alternates', sans-serif;
-  font-weight: 700;
 }
 
 .logo {
   text-align: center;
-  height: 100px;
-  padding: 20px 0 10px;
+  height: 11.11vh;
+  padding: 2.2222vh 0 1.1111vh;
   position: relative;
   z-index: 99;
 }
@@ -27,8 +22,12 @@ img {
 }
 
 a {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: 700;
+  height: 2.2222vw;
+  width: 6.9444vw;
   &:not(:last-of-type) {
-    padding-right: 20px;
+    padding-right: 1.3888vw;
   }
   &.home {
     &:link, &:visited {

@@ -1,5 +1,6 @@
 import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
 import {StateService} from '../services/state.service';
+import {Router} from '@angular/router';
 
 declare var ScrollMagic: any;
 
@@ -9,14 +10,12 @@ declare var ScrollMagic: any;
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
-
-  scenes = [];
   textColor;
   showSkills;
   barColor;
   showCounts = false;
 
-  constructor(private granim: StateService) { }
+  constructor(private granim: StateService, private router: Router) { }
 
   @ViewChild('right1') right1: ElementRef;
   @ViewChild('right2') right2: ElementRef;
@@ -25,10 +24,11 @@ export class AboutComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    this.scenes.forEach(scene => {
-      console.log('Refreshed!');
-      scene.refresh();
+    console.log('Executing...');
+    this.router.navigate(['/home']).then(() => {
+      this.router.navigate(['/about']);
     });
+    // this.router.navigate(['/about']);
   }
 
   ngOnInit() {
@@ -53,7 +53,6 @@ export class AboutComponent implements OnInit {
       .duration(this.getSectionHeight(this.right1))
       .on('end', event => this.showSkills = event.scrollDirection === 'FORWARD')
       .addTo(controller);
-    this.scenes.push(scene);
 
     const scene2 = new ScrollMagic.Scene({
       triggerElement: '#left2',
@@ -63,7 +62,7 @@ export class AboutComponent implements OnInit {
       .setPin('#left2')
       .duration(this.getSectionHeight(this.right2))
       .addTo(controller);
-    this.scenes.push(scene2);
+
     const scene3 = new ScrollMagic.Scene({
       triggerElement: '#left3',
       triggerHook: 0,
@@ -72,7 +71,6 @@ export class AboutComponent implements OnInit {
       .setPin('#left3')
       .duration(this.getSectionHeight(this.right3))
       .addTo(controller);
-    this.scenes.push(scene3);
 
     const scene4 = new ScrollMagic.Scene({
       triggerElement: '#left4',
@@ -82,7 +80,6 @@ export class AboutComponent implements OnInit {
       .setPin('#left4')
       .duration(this.getSectionHeight(this.right4))
       .addTo(controller);
-    this.scenes.push(scene4);
 
     this.granim.gradientChange.subscribe(colorDetails => {
       this.textColor = colorDetails.colorsTo[1];
