@@ -10,6 +10,8 @@ import {PortfoliosService} from '../../services/portfolios.service';
 export class PortfoliosComponent implements OnInit {
   isHome;
   items;
+  lightbox = false;
+  activeItem = 0;
 
   constructor(private router: Router, private portfolio: PortfoliosService) { }
 
@@ -21,6 +23,15 @@ export class PortfoliosComponent implements OnInit {
       }
     });
     this.items = this.portfolio.items;
+  }
+
+  showLightbox(index: number) {
+    this.activeItem = index;
+    this.lightbox = true;
+  }
+
+  closeLightbox() {
+    this.lightbox = false;
   }
 
 }

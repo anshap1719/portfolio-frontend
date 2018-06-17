@@ -1,0 +1,177 @@
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.9);
+  padding: 5vh 2vw;
+
+  * {
+    color: #fff;
+  }
+}
+
+.visit {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  text-align: center;
+  h1 {
+    text-align: center;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 700;
+    max-width: 150px;
+    margin: auto;
+  }
+}
+
+.close-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 200;
+  .outer {
+    position: relative;
+    width: 70px;
+    margin: auto;
+    cursor: pointer;
+  }
+
+  .inner {
+    width: inherit;
+    text-align: center;
+  }
+
+  label {
+    font-size: .8em;
+    line-height: 4em;
+    text-transform: uppercase;
+    color: #fff;
+    transition: all .3s ease-in;
+    opacity: 0;
+    cursor: pointer;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+  }
+
+  .inner:before, .inner:after {
+    position: absolute;
+    content: '';
+    height: 1px;
+    width: inherit;
+    background: #FFC107;
+    left: 0;
+    transition: all .3s ease-in;
+  }
+
+  .inner:before {
+    top: 50%;
+    transform: rotate(45deg);
+  }
+
+  .inner:after {
+    bottom: 50%;
+    transform: rotate(-45deg);
+  }
+
+  .outer:hover label {
+    opacity: 1;
+  }
+
+  .outer:hover .inner:before,
+  .outer:hover .inner:after {
+    transform: rotate(0);
+  }
+
+  .outer:hover .inner:before {
+    top: 0;
+  }
+
+  .outer:hover .inner:after {
+    bottom: 0;
+  }
+}
+
+.horizontal-flex {
+  height: 100%;
+}
+
+.img-container {
+  width: 60vw;
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.info-container {
+  width: 40vw;
+  padding: 0 2vw;
+  max-height: calc(55vw / 1.6);
+  overflow-y: scroll;
+
+  .description {
+    text-align: justify;
+    font-family: 'Work Sans', serif;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+}
+
+.visit-btn {
+  color: #fff;
+  cursor: pointer;
+  font-size:24px;
+  font-weight: 700;
+  line-height: 45px;
+  margin: 0 auto 2em;
+  max-width: 160px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  transition: letter-spacing 280ms ease-in-out;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:active {
+    letter-spacing: 5px;
+    transition: letter-spacing 280ms ease-in-out;
+  }
+
+  &:after,
+  &:before {
+    backface-visibility: hidden;
+    border: 1px solid rgba(#fff, 0);
+    bottom: 0px;
+    content: " ";
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    transition: all 280ms ease-in-out;
+    width: 0;
+  }
+
+  &:hover:after,
+  &:hover:before {
+    backface-visibility: hidden;
+    border-color: #fff;
+    transition: width 350ms ease-in-out;
+    width: 70%;
+  }
+
+  &:hover:before {
+    bottom: auto;
+    top: 0;
+    width: 70%;
+  }
+}

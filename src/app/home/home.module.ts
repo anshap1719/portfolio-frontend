@@ -7,6 +7,7 @@ import {PortfoliosComponent} from './portfolios/portfolios.component';
 import {RouterModule} from '@angular/router';
 import {NgsRevealModule} from 'ng-scrollreveal';
 import { TagComponent } from './portfolios/tag/tag.component';
+import { LightboxComponent } from './lightbox/lightbox.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { TagComponent } from './portfolios/tag/tag.component';
   declarations: [
     HomeComponent,
     PortfoliosComponent,
-    TagComponent
+    TagComponent,
+    LightboxComponent
   ],
   providers: [
   ]

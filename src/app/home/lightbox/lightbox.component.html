@@ -1,0 +1,26 @@
+<div class="lightbox">
+  <div class="close-btn">
+    <div class="outer" (click)="closeLightbox()">
+      <div class="inner">
+        <label>Close</label>
+      </div>
+    </div>
+  </div>
+  <div class="horizontal-flex align-center">
+    <div class="img-container">
+      <img [src]="activeItem.image" alt="">
+    </div>
+    <div class="info-container">
+      <h1 class="title">{{ activeItem.title }}</h1>
+      <h3 class="description" [innerHTML]="getHtml(activeItem.description)"></h3>
+      <div class="tags">
+        <div class="tag">
+          <app-tag [tags]="activeItem.tags"></app-tag>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="visit">
+    <h1><a [href]="activeItem.url" class="visit-btn">VISIT</a></h1>
+  </div>
+</div>
