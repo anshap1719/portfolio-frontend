@@ -9,3 +9,28 @@
   height: 100vh;
   background-color: #AA076B;
 }
+
+div.footer {
+  position: relative;
+  top: 200px;
+  text-align: center;
+  padding: 5px 0;
+  background-color: #fff;
+  h4 {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+
+    a {
+      color: #000 !important;
+      transition: opacity 0.4s;
+
+      &:link, &:visited {
+        opacity: 0.7 !important;
+      }
+
+      &:hover, &:active {
+        opacity: 1 !important;
+      }
+    }
+  }
+}

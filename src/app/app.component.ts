@@ -10,6 +10,7 @@ import {StateService} from './services/state.service';
 })
 export class AppComponent implements OnInit {
   isHome: boolean;
+  isAbout: boolean;
 
   @ViewChild('granim') granimElement: ElementRef;
 
@@ -24,6 +25,7 @@ export class AppComponent implements OnInit {
     this.router.events.subscribe(value => {
       if (value instanceof NavigationEnd) {
         this.isHome = this.router.url === '/';
+        this.isAbout = this.router.url === '/about';
       }
     });
     this.granim.element = this.granimElement;

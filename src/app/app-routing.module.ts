@@ -13,7 +13,7 @@ const routes: Route[] = [
   },
   {
     path: 'contact',
-    loadChildren: 'src/app/home/home.module#HomeModule'
+    loadChildren: 'src/app/contact/contact.module#ContactModule'
   },
   {
     path: '',

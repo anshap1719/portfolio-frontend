@@ -9,7 +9,7 @@ export const animations = [
       transform: 'translate(calc(28.08vw), -50px)',
     })),
     state('contact',   style({
-      transform: 'translate(0, 400px)',
+      transform: 'translate(calc(28.08vw), -50px)',
     })),
     transition('* => *', animate('400ms linear')),
   ]),
@@ -24,7 +24,9 @@ export const animations = [
       textAlign: 'center'
     })),
     state('contact',   style({
-      transform: 'translate(0, 400px)',
+      marginTop: '10vh',
+      transform: 'translate(-10.833vw, 0) scale(0.4)',
+      textAlign: 'center'
     })),
     transition('* => *', animate('400ms linear')),
   ]),

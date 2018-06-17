@@ -2,3 +2,6 @@
 <app-navbar></app-navbar>
 <app-my-info *ngIf="!isHome"></app-my-info>
 <router-outlet></router-outlet>
+<div class="footer" *ngIf="!isAbout">
+  <h4>Want to see how a certain thing is implemented on this website? Find the source code <a href="https://github.com/anshap1719/portfolio-frontend">here</a></h4>
+</div>

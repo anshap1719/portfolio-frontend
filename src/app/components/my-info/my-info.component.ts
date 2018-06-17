@@ -33,10 +33,10 @@ export class MyInfoComponent implements OnInit {
   }
 
   changeAnimateImageState(event) {
-    this.animateImage = event.toState.indexOf('about') !== -1;
+    this.animateImage = event.toState.indexOf('about') !== -1 || event.toState.indexOf('contact') !== -1;
   }
 
   changeAnimateTextState(event) {
-    this.animateText = event.toState.indexOf('about') !== -1;
+    this.animateText = event.toState.indexOf('about') !== -1 || event.toState.indexOf('contact') !== -1;
   }
 }

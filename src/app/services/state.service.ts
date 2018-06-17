@@ -16,7 +16,7 @@ export class StateService {
   constructor(router: Router) {
     router.events.subscribe(value => {
       if (value instanceof NavigationEnd) {
-        if (value.url.indexOf('home') !== -1) {
+        if (value.url.indexOf('home') !== -1 || value.url === '/') {
           this.default = 'home';
           if (this.granim) {
             this.granim.changeState('home');

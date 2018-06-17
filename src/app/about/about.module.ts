@@ -9,6 +9,7 @@ import {CountUpModule} from 'countup.js-angular2';
 import { StatsComponent } from './stats/stats.component';
 import { IntroComponent } from './intro/intro.component';
 import { WorkHistoryComponent } from './work-history/work-history.component';
+import { TestimonialsComponent } from './testimonials/testimonials.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import { WorkHistoryComponent } from './work-history/work-history.component';
     CountUpModule,
     routing
   ],
-  declarations: [AboutComponent, SkillsComponent, StatsComponent, IntroComponent, WorkHistoryComponent]
+  declarations: [AboutComponent, SkillsComponent, StatsComponent, IntroComponent, WorkHistoryComponent, TestimonialsComponent]
 })
 export class AboutModule { }
