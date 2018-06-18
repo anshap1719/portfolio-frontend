@@ -5,10 +5,10 @@
     </div>
   </div>
   <div class="list-item hide-on-init" *ngFor="let item of items; let i = index" ngsReveal (click)="showLightbox(i)">
-    <div class="square-with-bg" [style.background-image]="'url(\'' + item.image + '\')'">
-      <h2 class="description">{{ item.title }}</h2>
-      <div class="tags">
-        <div class="tag">
+    <div class="square-with-bg" [style.background-image]="'url(\'' + item.image + '\')'" (click)="showLightbox(i)">
+      <h2 class="description" (click)="showLightbox(i)">{{ item.title }}</h2>
+      <div class="tags" (click)="showLightbox(i)">
+        <div class="tag" (click)="showLightbox(i)">
           <app-tag [tags]="item.tags"></app-tag>
         </div>
       </div>
