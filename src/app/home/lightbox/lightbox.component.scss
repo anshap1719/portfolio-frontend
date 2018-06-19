@@ -100,6 +100,7 @@
 
 .horizontal-flex {
   height: 100%;
+  overflow-y: hidden;
 }
 
 .img-container {
@@ -114,7 +115,6 @@
   width: 40vw;
   padding: 0 2vw;
   max-height: calc(55vw / 1.6);
-  overflow-y: scroll;
 
   .description {
     text-align: justify;

@@ -31,4 +31,8 @@ export class NavbarComponent implements OnInit {
       this.router.navigate(['/home']);
     }
   }
+
+  goToHome() {
+    this.router.navigate(['/home']);
+  }
 }

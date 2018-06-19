@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {PortfoliosService} from '../../services/portfolios.service';
 import {DomSanitizer} from '@angular/platform-browser';
 import {animate, state, style, transition, trigger} from '@angular/animations';
@@ -52,5 +52,4 @@ export class LightboxComponent implements OnInit {
   getHtml(unsafe: string) {
     return this.sanitizer.bypassSecurityTrustHtml(unsafe);
   }
-
 }

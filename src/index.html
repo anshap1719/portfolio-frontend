@@ -21,6 +21,13 @@
   <meta name="twitter:description" content="I specialize in web development specifically in front-end development. I also have backend development experience.">
   <meta name="twitter:image" content="https://anshulsanghi.me/assets/logo.png">
   <meta name="twitter:card" content="summary_large_image">
+
+  <style>
+    form[name=contact][hidden] {
+      display: none;
+    }
+  </style>
+
 </head>
 <body>
   <app-root></app-root>
@@ -38,5 +45,13 @@
     })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'UA-86206233-1', 'auto');// add your tracking ID here.
   </script>
+
+  <!-- Hidden Contact Form For Netlify Bots -->
+  <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="contact" />
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <textarea name="message"></textarea>
+  </form>
 </body>
 </html>

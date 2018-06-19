@@ -10,7 +10,7 @@ import {StateService} from './services/state.service';
 })
 export class AppComponent implements OnInit {
   isHome: boolean;
-  isAbout: boolean;
+  hideFooter = true;
 
   @ViewChild('granim') granimElement: ElementRef;
 
@@ -25,7 +25,9 @@ export class AppComponent implements OnInit {
     this.router.events.subscribe(value => {
       if (value instanceof NavigationEnd) {
         this.isHome = this.router.url === '/';
-        this.isAbout = this.router.url === '/about';
+        setTimeout(() => {
+          this.hideFooter = Boolean(this.router.url === '/about' || this.router.url === '/');
+        }, 500);
         (<any>window).ga('set', 'page', value.urlAfterRedirects);
         (<any>window).ga('send', 'pageview');
       }
