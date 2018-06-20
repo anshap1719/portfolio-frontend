@@ -15,15 +15,10 @@ export class ContactService {
     }).join('&');
     url = '/contact?' + url;
 
-    return new Promise(resolve => {
-      this.http.post(url, null, {
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        }
-      })
-        .subscribe(next => {
-          resolve();
-        });
+    return this.http.post(url, null, {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
     });
   }
 }

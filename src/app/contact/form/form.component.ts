@@ -22,11 +22,13 @@ export class FormComponent implements OnInit {
   sendForm() {
     this.isFlying = true;
     this.contact.submitForm(this.form)
-      .then(() => {
+      .subscribe(next => {
         this.isFlying = false;
         this.form.name = '';
         this.form.email = '';
         this.form.message = 'Thank You! Your message has been received. I usually respond within a few hours...';
+
+        console.log(this.form);
 
         setTimeout(() => {
           this.form.message = '';
