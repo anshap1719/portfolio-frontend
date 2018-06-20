@@ -5,11 +5,11 @@ import { routing } from './contact-routing.module';
 import { ContactComponent } from './contact.component';
 import { ContactDetailsComponent } from './contact-details/contact-details.component';
 import { FormComponent } from './form/form.component';
-import { SocialMediaComponent } from './social-media/social-media.component';
 import {FormsModule} from '@angular/forms';
 import {NgsRevealModule} from 'ng-scrollreveal';
 import {ContactService} from '../services/contact.service';
 import {HttpClientModule} from '@angular/common/http';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   imports: [
@@ -17,13 +17,13 @@ import {HttpClientModule} from '@angular/common/http';
     FormsModule,
     NgsRevealModule,
     HttpClientModule,
+    RouterModule,
     routing
   ],
   declarations: [
     ContactComponent,
     ContactDetailsComponent,
-    FormComponent,
-    SocialMediaComponent
+    FormComponent
   ],
   providers: [
     ContactService
