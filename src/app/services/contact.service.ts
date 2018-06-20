@@ -14,6 +14,9 @@ export class ContactService {
       return encodeURIComponent(k) + '=' + encodeURIComponent(data[k]);
     }).join('&');
     url = '/contact?' + url;
+
+    console.log(url);
+
     return new Promise(resolve => {
       this.http.post(url, null, {
         headers: {
