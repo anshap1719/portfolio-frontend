@@ -24,6 +24,13 @@ export class FormComponent implements OnInit {
     this.contact.submitForm(this.form)
       .then(() => {
         this.isFlying = false;
+        this.form.name = '';
+        this.form.email = '';
+        this.form.message = 'Thank You! Your message has been received. I usually respond within a few hours...';
+
+        setTimeout(() => {
+          this.form.message = '';
+        }, 4000);
       });
   }
 
