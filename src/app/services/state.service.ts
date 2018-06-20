@@ -58,15 +58,20 @@ export class StateService {
         'about': {
           gradients: [
             ['#29323c', '#485563'],
-            ['#FF6B6B', '#556270'],
-            ['#EB3349', '#F45C43'],
+            ['#0D050E', '#2B193E'],
+            ['#003D73', '#132226'],
             ['#24C6DC', '#514A9D'],
           ],
           transitionSpeed: 8000
         },
         'contact': {
-          gradients: [ ['#FF4E50', '#F9D423'] ],
-          loop: false
+          gradients: [
+            ['#0D050E', '#2B193E'],
+            ['#9733EE', '#23345C'],
+            ['#000', '#003D73'],
+            ['#003D73', '#132226']
+          ],
+          transitionSpeed: 8000
         }
       },
       onGradientChange: colorDetails => {

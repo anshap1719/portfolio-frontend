@@ -1,7 +1,7 @@
 <app-stats *ngIf="showCounts"></app-stats>
 <div class="scroll-magic">
   <div class="left" id="left1">
-    <h1 [style.color]="textColor">Introduction</h1>
+    <h1>Introduction</h1>
   </div>
   <div class="right" id="right1" #right1>
     <app-intro></app-intro>
@@ -10,10 +10,10 @@
     <h1>Technical Skills</h1>
   </div>
   <div class="right" id="right2" #right2>
-    <app-skills [showSkills]="showSkills" [barColor]="barColor"></app-skills>
+    <app-skills [showSkills]="showSkills"></app-skills>
   </div>
   <div class="left" id="left3">
-    <h1 [style.color]="textColor">Testimonials</h1>
+    <h1>Testimonials</h1>
   </div>
   <div class="right" id="right3" #right3>
     <app-testimonials></app-testimonials>

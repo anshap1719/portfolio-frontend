@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
       if (value instanceof NavigationEnd) {
         this.isHome = this.router.url === '/';
         setTimeout(() => {
-          this.hideFooter = Boolean(this.router.url === '/about' || this.router.url === '/');
+          this.hideFooter = !Boolean(this.router.url === '/home');
         }, 500);
         (<any>window).ga('set', 'page', value.urlAfterRedirects);
         (<any>window).ga('send', 'pageview');

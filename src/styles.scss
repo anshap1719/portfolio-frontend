@@ -5,10 +5,13 @@ body {
   min-width: 100vw;
   margin: 0;
   padding: 0;
+  overflow-x: hidden !important;
 }
 
-* {
-  box-sizing: border-box !important;
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 img {
@@ -18,7 +21,7 @@ img {
 
 a {
   height: 20px;
-  width: 100px;
+  //width: 100px;
 }
 
 .horizontal-flex {
@@ -28,6 +31,11 @@ a {
   &.wrap {
     flex-wrap: wrap;
   }
+}
+
+.vertical-flex {
+  display: flex;
+  flex-direction: column;
 }
 
 .justify-between {
@@ -103,4 +111,10 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: flex-start !important;
     padding: 0 !important;
   }
+}
+
+::placeholder {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
 }

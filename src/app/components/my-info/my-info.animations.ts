@@ -6,12 +6,13 @@ export const animations = [
       transform: 'translate(0, 0)',
     })),
     state('about',   style({
-      transform: 'translate(calc(28.08vw), -50px)',
+      transform: 'translate(28.08vw, -50px)',
     })),
     state('contact',   style({
-      transform: 'translate(calc(28.08vw), -50px)',
+      transform: 'translate(6.8vw, calc(3vh - 50px))',
     })),
     transition('* => *', animate('400ms linear')),
+    transition('about <=> contact', animate('200ms linear')),
   ]),
   trigger('text', [
     state('home', style({
@@ -25,10 +26,11 @@ export const animations = [
     })),
     state('contact',   style({
       marginTop: '10vh',
-      transform: 'translate(-10.833vw, 0) scale(0.4)',
-      textAlign: 'center'
+      transform: 'translate(-32vw, 3vh) scale(0.4)',
+      textAlign: 'left'
     })),
     transition('* => *', animate('400ms linear')),
+    transition('about <=> contact', animate('200ms linear')),
   ]),
   trigger('animateImage', [
     state('false', style({

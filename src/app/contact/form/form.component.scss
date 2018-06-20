@@ -1,0 +1,223 @@
+input, textarea {
+  padding: 0 1.388vw 0 1.597vw;
+  margin: 10px 0;
+  display: block;
+  width: 100%;
+  background: #fff;
+  font-family: "Work Sans", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  color: #4B00E0 !important;
+  line-height: 1.2;
+  outline: none;
+  border: none;
+  transition: all 0.4s;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
+}
+
+input {
+  max-height: 62px;
+  height: 6.88vh;
+}
+
+textarea {
+  width: 100%;
+  height: 100%;
+  resize: none;
+  padding-top: 20px;
+  flex-grow: 0.7;
+}
+
+.textarea {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  background: rgba(256, 256, 256, 0.8);
+  padding: 5vh 3vw;
+  max-width: 40vw;
+  width: 100%;
+  height: 55.55vh;
+  min-height: 500px;
+  border-radius: 20px;
+}
+
+.contact {
+  perspective: 1px;
+}
+
+.field {
+  text-align: center;
+}
+
+// Send Button
+
+.mail-btn {
+  position: relative;
+  top: 35%;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 2px solid #4B00E0;
+  outline: none;
+  -webkit-appearance: none;
+  font-size: 2rem;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.5rem;
+  text-indent: 0.5rem;
+  cursor: pointer;
+  transform-origin: center;
+  border-radius: 10px;
+  transition: color 1.5s .5s,
+  border 3s 1s,
+  background-color 1s,
+  box-shadow 1s;
+
+  &:not(.fly):not(:hover) {
+    background-color: #4B00E0;
+    -webkit-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  &.fly {
+    background-color: transparent;
+  }
+}
+
+.mail-btn:before,
+.mail-btn:after {
+  content: '';
+  position: absolute;
+  opacity: 0;
+  backface-visibility: visible;
+  transform-style: preserve-3d;
+  perspective: 400px;
+  transform-origin: 50% -50%;
+  transform: rotateX(360deg) rotateY(0) translateX(-50%) translateY(0) scale(0.2);
+  transition: all 0.5s;
+}
+
+.mail-btn:before {
+  top: 5px;
+  left: 50%;
+  height: 3rem;
+  background: #4B00E0;
+  border-top: 2rem solid #fff;
+  border-right: 3rem solid transparent;
+  border-left: 3rem solid transparent;
+}
+
+.mail-btn:after {
+  top: 0;
+  left: 50%;
+  border-top: 2rem solid #4B00E0;
+  border-right: 3rem solid transparent;
+  border-left: 3rem solid transparent;
+}
+
+.mail-btn:hover {
+  color: rgba(255, 255, 255, 0);
+  border: 2px solid rgba(255, 255, 255, 0);
+  background-color: transparent;
+  transition: color .25s,
+  border .25s,
+  background-color .25s;
+}
+
+.mail-btn:hover:before,
+.mail-btn:hover:after {
+  opacity: 1;
+  transform: rotateX(0) rotateY(-10deg) translateX(-50%) translateY(0) scale(1);
+}
+
+.fly {
+  color: rgba(255, 255, 255, 0);
+  border: 2px solid rgba(255, 255, 255, 0);
+  animation: sended 4s 3s forwards;
+}
+
+@keyframes sended {
+  0% {
+    height: 2rem;
+    width: 3.5rem;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 10px solid #4B00E0;
+    border-left: 10px solid #4B00E0;
+    opacity: 0;
+    transform: rotate(-45deg) translateX(300%) translateY(-500%);
+  }
+  5% {
+    height: 2rem;
+    width: 3.5rem;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 10px solid #4B00E0;
+    border-left: 10px solid #4B00E0;
+    opacity: 1;
+    transform: rotate(-45deg) translateX(0) translateY(0);
+  }
+  78% {
+    height: 2rem;
+    width: 3.5rem;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 10px solid #4B00E0;
+    border-left: 10px solid #4B00E0;
+    opacity: 1;
+    transform: rotate(-45deg) translateX(0) translateY(0);
+  }
+  79% {
+    height: 2rem;
+    width: 3.5rem;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 10px solid #4B00E0;
+    border-left: 10px solid #4B00E0;
+    opacity: 0;
+    transform: rotate(-45deg) translateX(0) translateY(0);
+  }
+  80% {
+    height: auto;
+    width: auto;
+    color: rgba(255, 255, 255, 0);
+    border: 2px solid rgba(255, 255, 255, 0);
+    opacity: 0;
+    transform: rotate(0) translateX(0) translateY(0);
+  }
+  100% {
+    height: auto;
+    width: auto;
+    color: #4B00E0;
+    border: 2px solid #4B00E0;
+    opacity: 1;
+    transform: rotate(0) translateX(0) translateY(0);
+  }
+}
+
+.fly:before,
+.fly:after {
+  animation: flyout .6s forwards;
+}
+
+@keyframes flyout {
+  0% {
+    opacity: 1;
+    transform: rotateX(0) rotateZ(0) translateX(-50%) translateY(0) scale(1);
+  }
+  33% {
+    opacity: 0.66;
+    transform: rotateX(0) rotateZ(-5deg) translateX(-100%) translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: rotateX(0) rotateZ(0) translateX(1000%) translateY(0) scale(1);
+  }
+}

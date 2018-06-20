@@ -1,0 +1,11 @@
+.horizontal-flex {
+  max-width: 60vw;
+  margin: auto;
+  height: 300px;
+
+  app-form {
+    flex-grow: 0.6;
+    position: relative;
+    top: -220px;
+  }
+}

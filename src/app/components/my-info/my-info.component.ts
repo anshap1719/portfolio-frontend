@@ -14,6 +14,8 @@ export class MyInfoComponent implements OnInit {
   urlState = 'home';
   animateImage = false;
   animateText = false;
+  imageMargin = 'center';
+  imagePadding = '0';
 
   constructor(private router: Router) { }
 
@@ -23,6 +25,10 @@ export class MyInfoComponent implements OnInit {
     if (this.urlState === 'about') {
       this.changeAnimateTextState({ toState: 'about' });
       this.changeAnimateImageState({ toState: 'about' });
+    }
+    if (this.urlState === 'contact') {
+      this.changeAnimateTextState({ toState: 'contact' });
+      this.changeAnimateImageState({ toState: 'contact' });
     }
     this.router.events.subscribe(value => {
       if (value instanceof NavigationEnd) {
@@ -34,9 +40,11 @@ export class MyInfoComponent implements OnInit {
 
   changeAnimateImageState(event) {
     this.animateImage = event.toState.indexOf('about') !== -1 || event.toState.indexOf('contact') !== -1;
+    event.toState.indexOf('contact') !== -1 ? this.imageMargin = 'left' : this.imageMargin = 'center';
+    event.toState.indexOf('contact') !== -1 ? this.imagePadding = '2vw' : this.imagePadding = '0';
   }
 
   changeAnimateTextState(event) {
-    this.animateText = event.toState.indexOf('about') !== -1 || event.toState.indexOf('contact') !== -1;
+    this.animateText = event.toState.indexOf('about') !== -1;
   }
 }

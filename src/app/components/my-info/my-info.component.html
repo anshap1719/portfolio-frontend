@@ -1,5 +1,5 @@
 <div class="horizontal-flex align-center hide-on-init" ngsReveal>
-  <div class="image" [@image]="urlState" (@image.start)="changeAnimateImageState($event)">
+  <div class="image" [@image]="urlState" (@image.start)="changeAnimateImageState($event)" [style.text-align]="imageMargin" [style.padding-left]="imagePadding">
     <img src="/assets/me.png" alt="" [@animateImage]="animateImage">
   </div>
   <div class="content" [@text]="urlState" (@text.start)="changeAnimateTextState($event)">
