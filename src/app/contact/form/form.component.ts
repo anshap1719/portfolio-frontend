@@ -52,7 +52,7 @@ export class FormComponent implements OnInit {
             this.form.message = temp;
           }, 4000);
         }
-      });
+      }).unsubscribe();
   }
 
 }
