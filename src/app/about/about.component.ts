@@ -24,7 +24,6 @@ export class AboutComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    console.log('Executing...');
     this.router.navigate(['/home']).then(() => {
       this.router.navigate(['/about']);
     });

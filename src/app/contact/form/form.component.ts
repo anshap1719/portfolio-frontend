@@ -28,8 +28,6 @@ export class FormComponent implements OnInit {
         this.form.email = '';
         this.form.message = 'Thank You! Your message has been received. I usually respond within a few hours...';
 
-        console.log(this.form);
-
         setTimeout(() => {
           this.form.message = '';
         }, 4000);
@@ -39,8 +37,6 @@ export class FormComponent implements OnInit {
           this.form.name = '';
           this.form.email = '';
           this.form.message = 'Thank You! Your message has been received. I usually respond within a few hours...';
-
-          console.log(this.form);
 
           setTimeout(() => {
             this.form.message = '';
