@@ -15,6 +15,7 @@ nav {
   position: relative;
   z-index: 99;
   cursor: pointer;
+  will-change: transform, scale;
 }
 
 img {

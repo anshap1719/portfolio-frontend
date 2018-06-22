@@ -7,13 +7,17 @@
     max-width: 30%;
     text-align: center;
 
+    will-change: transform, padding;
+
     img {
       margin: auto;
+      will-change: transform, width;
     }
   }
 
   .content {
     padding: 0 2.77vw;
+    will-change: transform;
   }
 }
 
