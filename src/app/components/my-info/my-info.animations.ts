@@ -21,14 +21,20 @@ export const animations = [
     })),
     state('about',   style({
       marginTop: '10vh',
-      transform: 'translate(-10.833vw, 0) scale(0.4)',
+      transform: 'translate(-10.833vw, 0) scale({{scale}})',
       textAlign: 'center'
-    })),
+    }),
+      {
+        params: { scale: '0.4'}
+      }),
     state('contact',   style({
       marginTop: '10vh',
-      transform: 'translate(-32vw, 3vh) scale(0.4)',
+      transform: 'translate(-32vw, 3vh) scale({{scale}})',
       textAlign: 'left'
-    })),
+    }),
+    {
+      params: { scale: '0.4'}
+    }),
     transition('* => *', animate('400ms linear')),
     transition('about <=> contact', animate('200ms linear')),
   ]),
@@ -37,8 +43,11 @@ export const animations = [
       width: '100%'
     })),
     state('true',   style({
-      width: '30%'
-    })),
+      width: '{{width}}'
+    }),
+    {
+      params: { width: '30%'}
+    }),
     transition('* => *', animate('400ms linear')),
   ])
 ];

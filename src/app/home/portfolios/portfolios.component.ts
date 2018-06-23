@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
 import {PortfoliosService} from '../../services/portfolios.service';
+import {DeviceService} from '../../services/device.service';
 
 @Component({
   selector: 'app-portfolios',
@@ -12,8 +13,11 @@ export class PortfoliosComponent implements OnInit {
   items;
   lightbox = false;
   activeItem = 0;
+  isMobile;
 
-  constructor(private router: Router, private portfolio: PortfoliosService) { }
+  constructor(private router: Router, private portfolio: PortfoliosService, device: DeviceService) {
+    this.isMobile = device.isMobile();
+  }
 
   ngOnInit() {
     this.isHome = Boolean(this.router.url === '/');

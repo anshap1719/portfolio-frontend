@@ -1,13 +1,13 @@
-<div class="item-list">
+<div class="item-list" [class.mobile]="isMobile">
   <div class="list-item hide-on-init" ngsReveal>
     <div class="square-with-bg">
       <h1 class="title">Featured Work</h1>
     </div>
   </div>
-  <div class="list-item hide-on-init" *ngFor="let item of items; let i = index" ngsReveal (click)="showLightbox(i)">
+  <div class="list-item hide-on-init" *ngFor="let item of items; let i = index" ngsReveal (click)="showLightbox(i)" [class.multi-line-item]="isMobile && (item.title.indexOf('Rolando') !== -1 || item.title.indexOf('Compute Vision') !== -1)">
     <div class="square-with-bg" [style.background-image]="'url(\'' + item.image + '\')'" (click)="showLightbox(i)">
-      <h2 class="description" (click)="showLightbox(i)">{{ item.title }}</h2>
-      <div class="tags" (click)="showLightbox(i)">
+      <h2 class="description" (click)="showLightbox(i)" [class.multi-line]="isMobile && (item.title.indexOf('Rolando') !== -1 || item.title.indexOf('Compute Vision') !== -1)">{{ item.title }}</h2>
+      <div class="tags" (click)="showLightbox(i)" *ngIf="!isMobile">
         <div class="tag" (click)="showLightbox(i)">
           <app-tag [tags]="item.tags"></app-tag>
         </div>

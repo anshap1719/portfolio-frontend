@@ -1,4 +1,4 @@
-import {Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {PortfoliosService} from '../../services/portfolios.service';
 import {DomSanitizer} from '@angular/platform-browser';
 import {animate, state, style, transition, trigger} from '@angular/animations';
@@ -40,10 +40,12 @@ export class LightboxComponent implements OnInit {
 
   ngOnInit() {
     this.activeItem = this.items[this.activeIndex];
+    (<any>document).querySelector('body').classList.add('no-scroll');
   }
 
   closeLightbox() {
     this.lightbox = false;
+    (<any>document).querySelector('body').classList.remove('no-scroll');
     setTimeout(() => {
       this.close.emit();
     }, 400);

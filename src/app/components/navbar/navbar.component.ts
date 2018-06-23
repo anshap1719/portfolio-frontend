@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
 import {animations} from './navbar.animations';
+import {DeviceService} from '../../services/device.service';
 
 @Component({
   selector: 'app-navbar',
@@ -13,16 +14,22 @@ export class NavbarComponent implements OnInit {
   name: string;
   animationState = 'inactive';
   delay;
-  constructor(private router: Router) {}
+  isMobile;
+
+  constructor(private router: Router, device: DeviceService) {
+    this.isMobile = device.isMobile();
+  }
 
   ngOnInit() {
-    this.animationState = 'active';
-    this.router.events.subscribe(value => {
-      if (value instanceof NavigationEnd) {
-        value.url === '/' ? this.delay = 2000 : this.delay = 300;
-        this.animationState = 'inactive';
-      }
-    });
+    if (!this.isMobile) {
+      this.animationState = 'active';
+      this.router.events.subscribe(value => {
+        if (value instanceof NavigationEnd) {
+          value.url === '/' ? this.delay = 2000 : this.delay = 300;
+          this.animationState = 'inactive';
+        }
+      });
+    }
     this.isHome = false;
   }
 

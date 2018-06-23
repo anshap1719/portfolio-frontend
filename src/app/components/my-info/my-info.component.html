@@ -1,12 +1,12 @@
-<div class="horizontal-flex align-center hide-on-init" ngsReveal>
+<div class="horizontal-flex align-center hide-on-init" ngsReveal [@.disabled]="isMobile" [class.mobile]="isMobile">
   <div class="image" [@image]="urlState" (@image.start)="changeAnimateImageState($event)" [style.text-align]="imageMargin" [style.padding-left]="imagePadding">
-    <img src="/assets/me.png" alt="" [@animateImage]="animateImage">
+    <img src="/assets/me.png" alt="" [@animateImage]="{value: animateImage, params: { width: width }}">
   </div>
-  <div class="content" [@text]="urlState" (@text.start)="changeAnimateTextState($event)">
+  <div class="content" [@text]="{value: urlState, params: { scale: scale }}" (@text.start)="changeAnimateTextState($event)">
     <div class="outer">
       &nbsp;
       <div class="inner">
-        <div [class.left]="!animateText" [class.center]="animateText">
+        <div [class.left]="!animateText && !isMobile" [class.center]="animateText || isMobile">
           <h1>Anshul Sanghi</h1>
         </div>
       </div>
