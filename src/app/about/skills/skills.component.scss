@@ -17,7 +17,7 @@ ul, li {
 }
 
 .skills {
-  width: 80%;
+  width: 95%;
   max-width: 960px;
   height: 1000px;
   margin: auto;
@@ -29,6 +29,7 @@ ul, li {
   height: 100%;
   position: relative;
 }
+
 .line {
   height: inherit;
   width: 2px;
@@ -53,6 +54,7 @@ ul, li {
     left: calc(100% - 1px);
   }
 }
+
 .line__label {
   display: block;
   width: 100px;
@@ -65,6 +67,16 @@ ul, li {
   &.title {
     text-transform: uppercase;
     font-weight: bold;
+  }
+}
+
+.skills.mobile {
+  .line__label {
+    display: none;
+  }
+
+  .chart__label {
+    font-size: 3vw;
   }
 }
 
@@ -95,7 +107,8 @@ ul, li {
 
   animation: 0.8s anim-lightspeed-in-title ease forwards;
 
-  .chart--dev & {}
+  .chart--dev & {
+  }
   .chart--prod & {
     animation-delay: 4.2s;
   }

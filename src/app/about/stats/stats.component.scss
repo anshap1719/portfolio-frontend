@@ -17,6 +17,22 @@
   .vertical-flex {
     flex: 0 0 33.333333%;
   }
+
+  & > .vertical-flex {
+    margin-top: 5vh;
+
+    h1 {
+      font-size: 12.5vw;
+    }
+
+    h2 {
+      font-size: 6.25vw;
+    }
+
+    .vertical-flex {
+      margin: 20px auto;
+    }
+  }
 }
 
 h1, h2, h3 {

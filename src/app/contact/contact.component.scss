@@ -8,4 +8,19 @@
     position: relative;
     top: -220px;
   }
+
+  @media (max-width: 1000px) {
+    .horizontal-flex {
+      max-width: 90vw;
+      flex-wrap: wrap;
+      height: auto;
+      flex-direction: column;
+
+      app-form {
+
+        top: 0;
+        flex-grow: 1;
+      }
+    }
+  }
 }

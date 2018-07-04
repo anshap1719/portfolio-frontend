@@ -1,6 +1,10 @@
 .content {
   position: relative;
   top: 25vh;
+
+  @media (max-width: 600px) {
+    top: -20vh;
+  }
 }
 
 .spacer {

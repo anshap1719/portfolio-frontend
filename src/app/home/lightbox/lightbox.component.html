@@ -12,6 +12,9 @@
     </div>
     <div class="info-container">
       <h1 class="title">{{ activeItem.title }}</h1>
+      <div class="visit-mobile">
+        <h1><a [href]="activeItem.url" class="visit-btn" target="_blank">VISIT</a></h1>
+      </div>
       <h3 class="description" [innerHTML]="getHtml(activeItem.description)"></h3>
       <div class="tags">
         <div class="tag">

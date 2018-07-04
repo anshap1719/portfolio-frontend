@@ -33,7 +33,7 @@ h1 {
   #left1, #right2, #left3, #right4 {
     background-color: #fff;
     h1, h2, h3, p {
-      color: #0F517C;
+      color: #000;
       transition: color 3s;
     }
   }
@@ -57,5 +57,33 @@ h1 {
     width: 50vw;
     min-height: 100vh;
     padding: 10% 5%;
+  }
+
+  &.mobile {
+    margin-top: 5vh;
+
+    .left {
+      width: 0;
+      height: 0;
+      display: none;
+    }
+
+    .right {
+      width: 100vw;
+
+      h1 {
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #fff;
+        padding-bottom: 3px;
+      }
+    }
+
+    #right2, #right4 {
+      h1 {
+        border-bottom: 2px solid #000;
+      }
+    }
   }
 }

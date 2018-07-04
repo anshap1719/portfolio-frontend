@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {DeviceService} from '../../services/device.service';
 
 @Component({
   selector: 'app-skills',
@@ -6,11 +7,13 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./skills.component.scss']
 })
 export class SkillsComponent implements OnInit {
+  isMobile = false;
 
   @Input('showSkills') showSkills: boolean;
-  @Input('barColor') barColor: [any];
 
-  constructor() { }
+  constructor(device: DeviceService) {
+    this.isMobile = device.isMobile();
+  }
 
   ngOnInit() {
   }

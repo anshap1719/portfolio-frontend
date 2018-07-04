@@ -108,7 +108,7 @@ div.square-with-bg {
       top: 0;
       margin-top: 20vw;
 
-      &.multi-line-item {
+      &.multi-line-item:not(:first-of-type) {
         margin-top: 28vw;
       }
 
@@ -117,7 +117,7 @@ div.square-with-bg {
       }
 
       .title {
-        font-size: 30px;
+        font-size: 8vw;
         text-align: center;
         right: 0;
         color: #000;

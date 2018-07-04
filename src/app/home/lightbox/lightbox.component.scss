@@ -14,10 +14,74 @@
   * {
     color: #fff;
   }
+
+  @media (max-width: 1000px) {
+    height: auto;
+    overflow-y: scroll;
+    .img-container {
+      width: 90vw;
+      margin: auto;
+    }
+
+    .horizontal-flex {
+      overflow-y: visible;
+      flex-wrap: wrap;
+      position: relative;
+      top: 15vh;
+    }
+
+    .info-container {
+      width: 90vw;
+      margin: auto;
+      max-height: none;
+      height: auto;
+
+      .description {
+        font-size: 4vw;
+      }
+
+      .title {
+        font-size: 6vw;
+        margin: 10px auto;
+        text-align: center;
+      }
+    }
+
+    .visit {
+      display: none;
+    }
+
+    .visit-mobile {
+      display: block;
+      text-align: center;
+
+      h1 {
+        text-align: center;
+      }
+    }
+  }
+
+  @media (min-width: 1001px) {
+    .visit {
+      display: block;
+    }
+
+    .visit-mobile {
+      display: none;
+
+      h1 {
+        text-align: center;
+        font-family: "Work Sans", sans-serif;
+        font-weight: 700;
+        max-width: 150px;
+        margin: auto;
+      }
+    }
+  }
 }
 
 .visit {
-  position: fixed;
+  position: absolute;
   left: 0;
   right: 0;
   bottom: 20px;

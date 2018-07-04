@@ -2,6 +2,7 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
 import {NgsRevealConfig} from 'ng-scrollreveal';
 import {StateService} from './services/state.service';
+import {DeviceService} from './services/device.service';
 
 @Component({
   selector: 'app-root',
@@ -11,16 +12,22 @@ import {StateService} from './services/state.service';
 export class AppComponent implements OnInit {
   isHome: boolean;
   hideFooter = true;
+  isMobile = false;
 
   @ViewChild('granim') granimElement: ElementRef;
 
-  constructor(private router: Router, config: NgsRevealConfig, private granim: StateService) {
+  constructor(private router: Router, config: NgsRevealConfig, private granim: StateService, private device: DeviceService) {
     config.duration = 1200;
     config.easing = 'cubic-bezier(0.6, 0.2, 0.1, 1)';
     config.distance = '200px';
+    config.mobile = true;
+    this.isMobile = this.device.isMobile();
   }
 
   ngOnInit() {
+    if (this.router.url === '/' && this.device.isMobile()) {
+      this.router.navigate(['/home']);
+    }
     this.isHome = this.router.url === '/';
     this.router.events.subscribe(value => {
       if (value instanceof NavigationEnd) {

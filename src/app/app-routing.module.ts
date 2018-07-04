@@ -1,19 +1,22 @@
 import {ModuleWithProviders} from '@angular/core';
 import {Route, RouterModule} from '@angular/router';
 import {EmptyComponent} from './components/empty/empty.component';
+import {HomeModule} from './home/home.module';
+import {AboutModule} from './about/about.module';
+import {ContactModule} from './contact/contact.module';
 
 const routes: Route[] = [
   {
     path: 'home',
-    loadChildren: 'src/app/home/home.module#HomeModule'
+    loadChildren: () => HomeModule
   },
   {
     path: 'about',
-    loadChildren: 'src/app/about/about.module#AboutModule'
+    loadChildren: () => AboutModule
   },
   {
     path: 'contact',
-    loadChildren: 'src/app/contact/contact.module#ContactModule'
+    loadChildren: () => ContactModule
   },
   {
     path: '',
