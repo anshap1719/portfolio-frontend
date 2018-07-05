@@ -3,28 +3,28 @@
   <div class="left" id="left1">
     <h1>Introduction</h1>
   </div>
-  <div class="right" id="right1" #right1 ngsReveal>
+  <div class="right" id="right1" #right1>
     <h1 *ngIf="isMobile">Introduction</h1>
     <app-intro></app-intro>
   </div>
   <div class="left" id="left2">
     <h1>Technical Skills</h1>
   </div>
-  <div class="right" id="right2" #right2 ngsReveal>
+  <div class="right" id="right2" #right2>
     <h1 *ngIf="isMobile">Technical Skills</h1>
     <app-skills [showSkills]="showSkills"></app-skills>
   </div>
   <div class="left" id="left3">
     <h1>Testimonials</h1>
   </div>
-  <div class="right" id="right3" #right3 ngsReveal>
+  <div class="right" id="right3" #right3>
     <h1 *ngIf="isMobile">Testimonials</h1>
     <app-testimonials></app-testimonials>
   </div>
   <div class="left" id="left4">
     <h1>Work History</h1>
   </div>
-  <div class="right" id="right4" #right4 ngsReveal>
+  <div class="right" id="right4" #right4>
     <h1 *ngIf="isMobile">Work History</h1>
     <app-work-history></app-work-history>
   </div>

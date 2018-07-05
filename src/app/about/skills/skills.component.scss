@@ -17,7 +17,7 @@ ul, li {
 }
 
 .skills {
-  width: 95%;
+  width: 80%;
   max-width: 960px;
   height: 1000px;
   margin: auto;
@@ -71,6 +71,7 @@ ul, li {
 }
 
 .skills.mobile {
+  width: 95%;
   .line__label {
     display: none;
   }

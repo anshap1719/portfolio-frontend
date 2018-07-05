@@ -53,7 +53,7 @@ export class AboutComponent implements OnInit {
   }
 
   getSectionHeight(element: ElementRef): any {
-    return <any>window.getComputedStyle(element.nativeElement).height.split('px')[0] - window.innerHeight + 40;
+    return <any>window.getComputedStyle(element.nativeElement).height.split('px')[0] - window.innerHeight + 120;
   }
 
   initScrollmagic() {
@@ -66,7 +66,7 @@ export class AboutComponent implements OnInit {
       })
         .setPin('#left1')
         .duration(this.getSectionHeight(this.right1))
-        .on('end', event => this.showSkills = event.scrollDirection === 'FORWARD')
+        .on('end', event => this.showSkills = true)
         .addTo(controller);
 
       const scene2 = new ScrollMagic.Scene({
