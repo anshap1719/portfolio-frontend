@@ -1,13 +1,13 @@
 <div class="contact"
      [class.mobile]="isMobile"
-     [ngsReveal]="{ delay: 800, duration: 1100, distance: '100px', origin: 'right', scale: 0.7 }">
+     [ngsReveal]="ngsFormRevealConfig">
   <form class="vertical-flex"
         [ngsRevealSet]="{ delay: 1500, duration: 450, distance: '100px', scale: 0.7 }"
         [ngsInterval]="150"
         [ngsSelector]="'.field'"
         autocomplete="nope"
         #formElem="ngForm">
-    <div class="field" style="perspective: 1px;">
+    <div [class.field]="!isMobile" style="perspective: 1px;">
       <input
         required
         type="text"
@@ -20,7 +20,7 @@
         [attr.autofocus]="!isMobile"
         [class.invalid-input]="form.name.length < 2 && (nameModel.dirty || nameModel.touched || submitAttempt)">
     </div>
-    <div class="field" style="perspective: 1px;">
+    <div [class.field]="!isMobile" style="perspective: 1px;">
       <input
         required
         type="email"
@@ -32,7 +32,7 @@
         [class.invalid-input]="(form.email === '' || invalidEmail) && (emailModel.dirty || emailModel.touched || submitAttempt)"
         (keydown)="checkEmail()">
     </div>
-    <div class="field textarea" style="perspective: 1px;">
+    <div [class.field]="!isMobile" class="textarea" style="perspective: 1px;">
       <textarea
         placeholder="Message"
         [(ngModel)]="form.message"
@@ -40,7 +40,7 @@
         #messageModel="ngModel"
         [class.invalid-input]="form.message === ''  && (messageModel.dirty || messageModel.touched || submitAttempt)"></textarea>
     </div>
-    <div class="field">
+    <div [class.field]="!isMobile" style="text-align: center">
       <button class="mail-btn" type="button" (click)="sendForm()" [class.fly]="isFlying">send</button>
     </div>
   </form>

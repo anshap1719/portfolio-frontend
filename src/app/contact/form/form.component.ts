@@ -18,6 +18,13 @@ export class FormComponent implements OnInit {
   invalidEmail;
   isMobile = false;
   submitAttempt = false;
+  ngsFormRevealConfig = {
+    delay: 800,
+    duration: 1100,
+    distance: '100px',
+    origin: 'right',
+    scale: 0.7
+  };
 
   @ViewChild('formElem') formElem: NgForm;
 
@@ -26,6 +33,11 @@ export class FormComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (this.isMobile) {
+      this.ngsFormRevealConfig.delay = 0;
+      this.ngsFormRevealConfig.duration = 1;
+      this.ngsFormRevealConfig.origin = 'top';
+    }
   }
 
   checkEmail() {
