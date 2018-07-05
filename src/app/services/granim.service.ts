@@ -77,7 +77,7 @@ export class GranimService {
       },
       onGradientChange: colorDetails => {
         this.gradientChange.emit(colorDetails);
-        this.meta.updateTag({ name: 'theme-color', content: colorDetails.colorsTo[1] });
+        this.meta.updateTag({ name: 'theme-color', content: colorDetails.colorsFrom[1] });
       }
     });
     this.granim.changeState(this.default);
