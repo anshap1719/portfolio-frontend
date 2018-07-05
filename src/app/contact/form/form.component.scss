@@ -10,11 +10,20 @@ input, textarea {
   color: #4B00E0 !important;
   line-height: 1.2;
   outline: none;
-  border: none;
+  border: 0 solid #cc0000;
   transition: all 0.4s;
   border-radius: 20px;
   -webkit-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
+
+  &.invalid-input {
+    border: 2px solid #d32f2f;
+    transition: all 0.4s;
+
+    &::placeholder {
+      color: #d32f2f;
+    }
+  }
 }
 
 input {
