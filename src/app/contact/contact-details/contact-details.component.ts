@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {DeviceService} from '../../services/device.service';
 
 @Component({
   selector: 'app-contact-details',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact-details.component.scss']
 })
 export class ContactDetailsComponent implements OnInit {
+  isMobile = false;
 
-  constructor() { }
+  constructor(device: DeviceService) {
+    this.isMobile = device.isMobile();
+  }
 
   ngOnInit() {
   }

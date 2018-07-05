@@ -1,4 +1,4 @@
-<div class="contact" [ngsReveal]="{ delay: 800, duration: 1100, distance: '100px', origin: 'right', scale: 0.7 }">
+<div class="contact" [class.mobile]="isMobile" [ngsReveal]="{ delay: 800, duration: 1100, distance: '100px', origin: 'right', scale: 0.7 }">
   <form class="vertical-flex" [ngsRevealSet]="{ delay: 1500, duration: 450, distance: '100px', scale: 0.7 }" [ngsInterval]="150" [ngsSelector]="'.field'" autocomplete="nope">
     <div class="field" style="perspective: 1px;">
       <input type="text" placeholder="Your Name Please?" autocomplete="nope" [(ngModel)]="form.name" name="nopeName">

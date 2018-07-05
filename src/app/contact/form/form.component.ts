@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ContactService} from '../../services/contact.service';
+import {DeviceService} from '../../services/device.service';
 
 @Component({
   selector: 'app-form',
@@ -13,8 +14,11 @@ export class FormComponent implements OnInit {
     email: '',
     message: '',
   };
+  isMobile = false;
 
-  constructor(private contact: ContactService) { }
+  constructor(private contact: ContactService, device: DeviceService) {
+    this.isMobile = device.isMobile();
+  }
 
   ngOnInit() {
   }

@@ -1,4 +1,4 @@
-<div class="horizontal-flex justify-between">
+<div class="justify-between" [class.horizontal-flex]="!isMobile" [class.vertical-flex]="isMobile">
   <app-contact-details></app-contact-details>
   <app-form></app-form>
 </div>

@@ -50,6 +50,17 @@ form {
   perspective: 1px;
 }
 
+.contact.mobile {
+  form {
+    max-width: 90%;
+    margin: 40px auto 20px;
+
+    input, textarea {
+      padding-left: 4vw;
+    }
+  }
+}
+
 .field {
   text-align: center;
 }

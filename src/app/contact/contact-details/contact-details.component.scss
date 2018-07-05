@@ -5,7 +5,6 @@ a {
   line-height: 19.2px;
   font-size: 16px;
   margin: 8px 0 8px -0.8vw;
-  visibility: hidden;
   perspective: 1px;
   color: #fff;
   text-decoration: none;
@@ -44,4 +43,9 @@ a {
 .contact {
   max-width: 60vw;
   margin: auto;
+
+  &.mobile {
+    max-width: 80vw;
+    margin-top: 40px;
+  }
 }
