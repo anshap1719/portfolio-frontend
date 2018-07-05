@@ -1,5 +1,5 @@
 import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
-import {StateService} from '../services/state.service';
+import {GranimService} from '../services/granim.service';
 import {Router} from '@angular/router';
 import {DeviceService} from '../services/device.service';
 
@@ -16,7 +16,7 @@ export class AboutComponent implements OnInit {
   showCounts = false;
   isMobile = false;
 
-  constructor(private granim: StateService, private router: Router, device: DeviceService) {
+  constructor(private granim: GranimService, private router: Router, device: DeviceService) {
     this.isMobile = device.isMobile();
     this.showCounts = this.isMobile;
   }

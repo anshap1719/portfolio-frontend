@@ -7,7 +7,7 @@ declare var Granim: any;
 @Injectable({
   providedIn: 'root'
 })
-export class StateService {
+export class GranimService {
   granim;
   default;
   element;
