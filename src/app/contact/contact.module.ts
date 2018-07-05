@@ -10,6 +10,8 @@ import {NgsRevealModule} from 'ng-scrollreveal';
 import {ContactService} from '../services/contact.service';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterModule} from '@angular/router';
+import {NgProgressHttpModule} from '@ngx-progressbar/http';
+import {NgProgressRouterModule} from '@ngx-progressbar/router';
 
 @NgModule({
   imports: [
@@ -18,7 +20,9 @@ import {RouterModule} from '@angular/router';
     NgsRevealModule,
     HttpClientModule,
     RouterModule,
-    routing
+    routing,
+    NgProgressHttpModule,
+    NgProgressRouterModule
   ],
   declarations: [
     ContactComponent,

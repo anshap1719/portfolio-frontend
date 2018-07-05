@@ -8,13 +8,17 @@ import {RouterModule} from '@angular/router';
 import {NgsRevealModule} from 'ng-scrollreveal';
 import { TagComponent } from './portfolios/tag/tag.component';
 import { LightboxComponent } from './lightbox/lightbox.component';
+import {NgProgressHttpModule} from '@ngx-progressbar/http';
+import {NgProgressRouterModule} from '@ngx-progressbar/router';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
     NgsRevealModule,
-    routing
+    routing,
+    NgProgressHttpModule,
+    NgProgressRouterModule
   ],
   declarations: [
     HomeComponent,

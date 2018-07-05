@@ -1,5 +1,6 @@
 import {ElementRef, EventEmitter, Injectable} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
+import {Meta} from '@angular/platform-browser';
 
 declare var Granim: any;
 
@@ -13,7 +14,7 @@ export class StateService {
   once = 0;
   gradientChange = new EventEmitter();
 
-  constructor(router: Router) {
+  constructor(router: Router, private meta: Meta) {
     router.events.subscribe(value => {
       if (value instanceof NavigationEnd) {
         if (value.url.indexOf('home') !== -1 || value.url === '/') {
@@ -76,6 +77,7 @@ export class StateService {
       },
       onGradientChange: colorDetails => {
         this.gradientChange.emit(colorDetails);
+        this.meta.updateTag({ name: 'theme-color', content: colorDetails.colorsTo[1] });
       }
     });
     this.granim.changeState(this.default);

@@ -11,6 +11,9 @@ import { MyInfoComponent } from './components/my-info/my-info.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { EmptyComponent } from './components/empty/empty.component';
 import {NgsRevealModule} from 'ng-scrollreveal';
+import {NgProgressModule} from '@ngx-progressbar/core';
+import {NgProgressHttpModule} from '@ngx-progressbar/http';
+import {NgProgressRouterModule} from '@ngx-progressbar/router';
 
 
 @NgModule({
@@ -26,7 +29,10 @@ import {NgsRevealModule} from 'ng-scrollreveal';
     CommonModule,
     RouterModule,
     NgsRevealModule.forRoot(),
-    routing
+    routing,
+    NgProgressModule.forRoot(),
+    NgProgressHttpModule,
+    NgProgressRouterModule
   ],
   providers: [
   ],
