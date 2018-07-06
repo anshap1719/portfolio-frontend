@@ -14,11 +14,11 @@ exports.handler = function (event, context, callback) {
 
         result.rss.channel[0].item.map(item => {
           var obj = {
-            title: item.title,
-            link: item.link,
+            title: item.title[0],
+            link: item.link[0],
             categories: item.category,
-            data: item.pubDate,
-            content: item['content:encoded']
+            data: item.pubDate[0],
+            content: item['content:encoded'][0]
           };
           main.items.push(obj);
           return item;

@@ -10,20 +10,12 @@ export class MediumService {
 
   fetchPosts() {
     console.log("Fetch Called!");
-    this.http.get('/.netlify/functions/index', {
+    return this.http.get('/.netlify/functions/index', {
       headers: {
         'Content-Type': 'application/json'
       }
-    }).subscribe(next => {
-      console.log(next);
     });
   }
 }
 
 // rss.channel[0].item
-
-// function htmlDecode(input){
-//   var e = document.createElement('div');
-//   e.innerHTML = input;
-//   return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
-// }
