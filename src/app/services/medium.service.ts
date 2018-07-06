@@ -10,7 +10,7 @@ export class MediumService {
 
   fetchPosts() {
     console.log("Fetch Called!");
-    this.http.get('http://localhost:9000/index', {
+    this.http.get('/.netlify/functions/index', {
       headers: {
         'Content-Type': 'application/json'
       }
