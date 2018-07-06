@@ -15,6 +15,7 @@ export class BlogComponent implements OnInit {
   ngOnInit() {
     this.medium.fetchPosts().subscribe((next: any) => {
       console.log(next);
+      console.log(next.ite)
       this.html = this.getHtml(this.htmlDecode(next.items[0].content));
       console.log(this.html);
     });
