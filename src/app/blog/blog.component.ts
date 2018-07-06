@@ -25,9 +25,9 @@ export class BlogComponent implements OnInit {
     return this.sanitizer.bypassSecurityTrustHtml(unsafe);
   }
 
-  htmlDecode(input) {
-    const e = (<any>document).createElement('div');
-    e.innerHTML = input;
-    return e.childNodes.length === 0 ? '' : e.childNodes[0].nodeValue;
+  htmlDecode(str) {
+    return str.replace(/&#(\d+);/g, (match, dec) => {
+      return String.fromCharCode(dec);
+    });
   }
 }
