@@ -32,6 +32,11 @@ export class GranimService {
           if (this.granim) {
             this.granim.changeState('contact');
           }
+        } else if (value.url.indexOf('blog') !== -1) {
+          this.default = 'blog';
+          if (this.granim) {
+            this.granim.changeState('blog');
+          }
         }
 
         if (!this.granim) {
@@ -66,6 +71,15 @@ export class GranimService {
           transitionSpeed: 8000
         },
         'contact': {
+          gradients: [
+            ['#0D050E', '#2B193E'],
+            ['#9733EE', '#23345C'],
+            ['#000', '#003D73'],
+            ['#003D73', '#132226']
+          ],
+          transitionSpeed: 8000
+        },
+        'blog': {
           gradients: [
             ['#0D050E', '#2B193E'],
             ['#9733EE', '#23345C'],

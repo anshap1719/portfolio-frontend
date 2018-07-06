@@ -136,13 +136,13 @@ ul, li {
   animation: 1s anim-lightspeed-in ease forwards;
 
   .chart--dev & {
-    @include stagger-anim-delay(15, 0.5s, 0.2s);
+    @include stagger-anim-delay(16, 0.5s, 0.2s);
   }
   .chart--prod & {
-    @include stagger-anim-delay(3, 3.8s, 0.2s);
+    @include stagger-anim-delay(3, 4.2s, 0.2s);
   }
   .chart--design & {
-    @include stagger-anim-delay(3, 5s, 0.2s);
+    @include stagger-anim-delay(3, 5.5s, 0.2s);
   }
 }
 

@@ -16,6 +16,10 @@ const routes: Route[] = [
     loadChildren: 'src/app/contact/contact.module#ContactModule'
   },
   {
+    path: 'blog',
+    loadChildren: 'src/app/blog/blog.module#BlogModule'
+  },
+  {
     path: '',
     component: EmptyComponent
   }
