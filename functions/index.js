@@ -1,4 +1,5 @@
-var request = require("request"); // Include the request lib - run npm install request
+var request = require("request");
+
 exports.handler = function(event, context, callback) {
 	callback = context.done;
 	var data = event.bodyJson || {};
