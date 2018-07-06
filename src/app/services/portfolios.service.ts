@@ -55,6 +55,13 @@ export class PortfoliosService {
       tags: ['HTML', 'CSS', 'JavaScript', 'jQuery', 'Bootstrap', 'WordPress']
     },
     {
+      title: 'Survey Form Redesign On Concerto Platform',
+      description: 'I was tasked with redesigning and developing a survey form for a company to make it look sleek and modern. The form is based on the Concerto platform and the app was built on Angular 1 + CSS. Since this project is under NDA, All confidential information has been removed.',
+      image: '/assets/concerto.png',
+      url: '',
+      tags: ['HTML', 'CSS', 'JavaScript', 'Angular 1', 'Concerto']
+    },
+    {
       title: 'Red Contender',
       description: 'Initially starting as a jQuery project to fix existing website, I suggested the client that building it from ground up and with Angular will be much easier and better both functionality-wise and maintainability-wise. The client agreed and this turned out to be my only Angular project which is not under NDA and can be shared on my portfolio. This is a very basic Angular 5 app.',
       image: '/assets/redcontender.png',

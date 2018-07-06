@@ -12,7 +12,7 @@
     </div>
     <div class="info-container">
       <h1 class="title">{{ activeItem.title }}</h1>
-      <div class="visit-mobile">
+      <div class="visit-mobile" *ngIf="activeItem.url !== ''">
         <h1><a [href]="activeItem.url" class="visit-btn" target="_blank">VISIT</a></h1>
       </div>
       <h3 class="description" [innerHTML]="getHtml(activeItem.description)"></h3>
@@ -23,7 +23,7 @@
       </div>
     </div>
   </div>
-  <div class="visit">
+  <div class="visit" *ngIf="activeItem.url !== ''">
     <h1><a [href]="activeItem.url" class="visit-btn" target="_blank">VISIT</a></h1>
   </div>
 </div>
