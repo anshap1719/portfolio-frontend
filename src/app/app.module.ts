@@ -14,6 +14,7 @@ import {NgsRevealModule} from 'ng-scrollreveal';
 import {NgProgressModule} from '@ngx-progressbar/core';
 import {NgProgressHttpModule} from '@ngx-progressbar/http';
 import {NgProgressRouterModule} from '@ngx-progressbar/router';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import {NgProgressRouterModule} from '@ngx-progressbar/router';
     BrowserAnimationsModule,
     CommonModule,
     RouterModule,
+    HttpClientModule,
     NgsRevealModule.forRoot(),
     routing,
     NgProgressModule.forRoot(),
