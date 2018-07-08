@@ -81,12 +81,8 @@ export class GranimService {
         },
         'blog': {
           gradients: [
-            ['#0D050E', '#2B193E'],
-            ['#9733EE', '#23345C'],
-            ['#000', '#003D73'],
-            ['#003D73', '#132226']
-          ],
-          transitionSpeed: 8000
+            ['#fff', '#fff']
+          ]
         }
       },
       onGradientChange: colorDetails => {

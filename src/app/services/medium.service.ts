@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {environment} from '../../environments/environment';
 import {DomSanitizer} from '@angular/platform-browser';
 import {Subject} from 'rxjs';
 
@@ -13,30 +12,24 @@ export class MediumService {
   private updateItems = new Subject<any>();
   itemsUpdated = this.updateItems.asObservable();
 
-  constructor(private http: HttpClient, private sanitizer: DomSanitizer) { }
+  constructor(private http: HttpClient) { }
 
   fetchPosts() {
-    console.log('Fetch Called!!');
-    const request = this.http.get('/.netlify/functions/index', {
+    const request = this.http.get('/index', {
       headers: {
         'Content-Type': 'application/json'
       }
     });
 
     request.subscribe((next: any) => {
-      console.log('Subscribed!');
       this.items = next.items;
       this.items = this.items.map(item => {
-        console.log(item);
-        item.content = this.getHtml(this.htmlDecode(item.content));
+        item.content = this.htmlDecode(item.content);
         return item;
       });
       this.updateItems.next(this.items);
+      localStorage.setItem('items', JSON.stringify(this.items));
     });
-  }
-
-  getHtml(unsafe: string) {
-    return this.sanitizer.bypassSecurityTrustHtml(unsafe);
   }
 
   htmlDecode(str) {

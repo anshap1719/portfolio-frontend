@@ -1,0 +1,30 @@
+div.blog-post-container {
+  max-width: 60vw;
+  margin: auto;
+
+  h3 {
+    font-size: 2.9166vw;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    line-height: 3.0332vw;
+    color: rgba(0,0,0,0.84);
+  }
+
+  h4 {
+    font-size: 1.9444vw;
+    font-family: 'Lato', serif;
+    font-weight: 400;
+    line-height: 2.3721vw;
+    color: rgba(0,0,0,0.54);
+    margin-bottom: 22px;
+  }
+
+  p {
+    font-size: 1.4583vw;
+    font-family: 'Arvo', sans-serif;
+    font-weight: 400;
+    line-height: 2.3041vw;
+    color: rgba(0,0,0,0.84);
+    margin-top: 29px;
+  }
+}

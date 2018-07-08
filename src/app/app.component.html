@@ -1,7 +1,7 @@
 <ng-progress [color]="'#fff'" [thick]="true"></ng-progress>
 <canvas id="granim-canvas" #granim></canvas>
 <app-navbar></app-navbar>
-<app-my-info *ngIf="!isHome"></app-my-info>
+<app-my-info *ngIf="!isHome && !isBlog"></app-my-info>
 <router-outlet></router-outlet>
 <div class="footer" *ngIf="!hideFooter && !isMobile">
   <h4>Curious about how a certain thing is implemented on this website? Find the source code <a href="https://github.com/anshap1719/portfolio-frontend">here</a></h4>
