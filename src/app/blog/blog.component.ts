@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {MediumService} from '../services/medium.service';
-import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-blog',
@@ -9,25 +8,15 @@ import {DomSanitizer} from '@angular/platform-browser';
 })
 export class BlogComponent implements OnInit {
   html;
+  items;
 
-  constructor(private medium: MediumService, private sanitizer: DomSanitizer) { }
+  constructor(private medium: MediumService) { }
 
   ngOnInit() {
-    this.medium.fetchPosts().subscribe((next: any) => {
-      console.log(next);
-      console.log(this.htmlDecode(next.items[0].content));
-      this.html = this.getHtml(this.htmlDecode(next.items[0].content));
-      console.log(this.html);
-    });
-  }
-
-  getHtml(unsafe: string) {
-    return this.sanitizer.bypassSecurityTrustHtml(unsafe);
-  }
-
-  htmlDecode(str) {
-    return str.replace(/&#(\d+);/g, (match, dec) => {
-      return String.fromCharCode(dec);
-    });
+    this.medium.itemsUpdated.subscribe(items => {
+      this.items = items;
+      this.html = items[0].content;
+    }).unsubscribe();
+    this.medium.fetchPosts();
   }
 }

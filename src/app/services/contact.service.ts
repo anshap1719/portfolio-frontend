@@ -10,9 +10,7 @@ export class ContactService {
   submitForm(form: any) {
     const data = { 'form-name': 'contact', ...form };
 
-    let url = Object.keys(data).map(function(k) {
-      return encodeURIComponent(k) + '=' + encodeURIComponent(data[k]);
-    }).join('&');
+    let url = Object.keys(data).map(k => encodeURIComponent(k) + '=' + encodeURIComponent(data[k])).join('&');
     url = '/contact?' + url;
 
     return this.http.post(url, null, {
