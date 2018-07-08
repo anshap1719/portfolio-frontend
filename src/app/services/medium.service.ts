@@ -17,21 +17,22 @@ export class MediumService {
 
   fetchPosts() {
     console.log('Fetch Called!!');
-    this.http.get('/.netlify/functions/index', {
+    const request = this.http.get('/.netlify/functions/index', {
       headers: {
         'Content-Type': 'application/json'
       }
-    })
-      .subscribe((next: any) => {
-        console.log('Subscribed!');
-        this.items = next.items;
-        this.items = this.items.map(item => {
-          console.log(item);
-          item.content = this.getHtml(this.htmlDecode(item.content));
-          return item;
-        });
-        this.updateItems.next(this.items);
-    }).unsubscribe();
+    });
+
+    request.subscribe((next: any) => {
+      console.log('Subscribed!');
+      this.items = next.items;
+      this.items = this.items.map(item => {
+        console.log(item);
+        item.content = this.getHtml(this.htmlDecode(item.content));
+        return item;
+      });
+      this.updateItems.next(this.items);
+    });
   }
 
   getHtml(unsafe: string) {
