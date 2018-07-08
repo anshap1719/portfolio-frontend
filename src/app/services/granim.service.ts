@@ -81,7 +81,16 @@ export class GranimService {
         },
         'blog': {
           gradients: [
-            ['#fff', '#fff']
+            ['#29323c', '#485563'],
+            ['#0D050E', '#2B193E'],
+            ['#003D73', '#132226'],
+            ['#24C6DC', '#514A9D'],
+          ],
+          transitionSpeed: 8000
+        },
+        'post': {
+          gradients: [
+            ['#fff', '#fff'],
           ]
         }
       },

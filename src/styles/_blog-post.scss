@@ -1,5 +1,6 @@
 div.blog-post-container {
   max-width: 60vw;
+  padding: 2.5vw;
   margin: auto;
 
   h3 {
@@ -8,11 +9,12 @@ div.blog-post-container {
     font-weight: 600;
     line-height: 3.0332vw;
     color: rgba(0,0,0,0.84);
+    margin-bottom: 14px;
   }
 
   h4 {
     font-size: 1.9444vw;
-    font-family: 'Lato', serif;
+    font-family: 'Lato', sans-serif;
     font-weight: 400;
     line-height: 2.3721vw;
     color: rgba(0,0,0,0.54);
@@ -21,10 +23,40 @@ div.blog-post-container {
 
   p {
     font-size: 1.4583vw;
-    font-family: 'Arvo', sans-serif;
+    font-family: 'Arvo', serif;
     font-weight: 400;
     line-height: 2.3041vw;
     color: rgba(0,0,0,0.84);
     margin-top: 29px;
+    text-align: justify;
+  }
+
+  pre {
+    font-size: 16px;
+    background: rgba(0,0,0,.05);
+    padding: 20px;
+    margin-top: 29px;
+    white-space: pre-wrap;
+    font-family: 'Roboto Mono', monospace;
+    letter-spacing: 0;
+    font-weight: 400;
+    font-style: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -moz-font-feature-settings: "liga" on;
+    color: rgba(0,0,0,.84);
+    line-height: 1.4;
+  }
+
+  a {
+    &:link, &:visited, &:hover, &:active {
+      color: rgba(0,0,0,0.84);
+    }
+  }
+
+  iframe {
+    margin-top: 29px;
+    max-width: 100% !important;
   }
 }

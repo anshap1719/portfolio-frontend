@@ -1,0 +1,6 @@
+<div class="masonary">
+  <a class="masonary-brick" *ngFor="let item of items; let i = index" [style.background-color]="randomColors[i]" [routerLink]="['/blog', 'posts', i]">
+    <h3>{{item.title}}</h3>
+    <h3>{{item.pubDate | date}}</h3>
+  </a>
+</div>

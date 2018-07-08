@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {DomSanitizer} from '@angular/platform-browser';
 import {Subject} from 'rxjs';
+import {NgProgress} from '@ngx-progressbar/core';
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +13,10 @@ export class MediumService {
   private updateItems = new Subject<any>();
   itemsUpdated = this.updateItems.asObservable();
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private progress: NgProgress) { }
 
   fetchPosts() {
+    this.progress.start();
     const request = this.http.get('/index', {
       headers: {
         'Content-Type': 'application/json'
@@ -28,7 +30,7 @@ export class MediumService {
         return item;
       });
       this.updateItems.next(this.items);
-      localStorage.setItem('items', JSON.stringify(this.items));
+      this.progress.complete();
     });
   }
 

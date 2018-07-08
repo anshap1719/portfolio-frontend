@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   hideFooter = true;
   isMobile = false;
   isBlog = false;
+  progressColor = '#fff';
 
   @ViewChild('granim') granimElement: ElementRef;
 
@@ -39,6 +40,7 @@ export class AppComponent implements OnInit {
         }, 500);
         (<any>window).ga('set', 'page', value.urlAfterRedirects);
         (<any>window).ga('send', 'pageview');
+        this.router.url.indexOf('blog') === -1 ? this.progressColor = '#fff' : this.progressColor = 'red';
       }
     });
     this.granim.element = this.granimElement;
