@@ -17,7 +17,7 @@ export class MediumService {
 
   fetchPosts() {
     console.log('Fetch Called!!');
-    this.http.get('http://127.0.0.1:9000/index', {})
+    this.http.get(`${environment.functionUrl}`, {})
       .subscribe((next: any) => {
         console.log('Subscribed!');
         this.items = next.items;
