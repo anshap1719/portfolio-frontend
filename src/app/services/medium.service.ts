@@ -17,7 +17,7 @@ export class MediumService {
 
   fetchPosts() {
     this.progress.start();
-    const request = this.http.get('/index', {
+    const request = this.http.get('/.netlify/functions/index', {
       headers: {
         'Content-Type': 'application/json'
       }
