@@ -17,7 +17,11 @@ export class MediumService {
 
   fetchPosts() {
     console.log('Fetch Called!!');
-    this.http.get(`${environment.functionUrl}`, {})
+    this.http.get('/.netlify/functions/index', {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
       .subscribe((next: any) => {
         console.log('Subscribed!');
         this.items = next.items;
