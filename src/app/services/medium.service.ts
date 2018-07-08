@@ -16,22 +16,25 @@ export class MediumService {
   constructor(private http: HttpClient, private progress: NgProgress) { }
 
   fetchPosts() {
-    this.progress.start();
-    const request = this.http.get('/.netlify/functions/index', {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-
-    request.subscribe((next: any) => {
-      this.items = next.items;
-      this.items = this.items.map(item => {
-        item.content = this.htmlDecode(item.content);
-        return item;
+    return new Promise((resolve => {
+      this.progress.start();
+      const request = this.http.get('/.netlify/functions/index', {
+        headers: {
+          'Content-Type': 'application/json'
+        }
       });
-      this.updateItems.next(this.items);
-      this.progress.complete();
-    });
+
+      request.subscribe((next: any) => {
+        this.items = next.items;
+        this.items = this.items.map(item => {
+          item.content = this.htmlDecode(item.content);
+          return item;
+        });
+        this.updateItems.next(this.items);
+        this.progress.complete();
+        resolve();
+      });
+    }));
   }
 
   htmlDecode(str) {

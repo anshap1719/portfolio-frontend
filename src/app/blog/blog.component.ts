@@ -11,6 +11,8 @@ export class BlogComponent implements OnInit {
   constructor(private medium: MediumService) { }
 
   ngOnInit() {
-    this.medium.fetchPosts();
+    if (!this.medium.items) {
+      this.medium.fetchPosts();
+    }
   }
 }

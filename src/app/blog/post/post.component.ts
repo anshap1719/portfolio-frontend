@@ -3,6 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {MediumService} from '../../services/medium.service';
 import {DomSanitizer} from '@angular/platform-browser';
 import {GranimService} from '../../services/granim.service';
+import {NgProgress} from '@ngx-progressbar/core';
 
 @Component({
   selector: 'app-post',
@@ -16,12 +17,20 @@ export class PostComponent implements OnInit {
     private route: ActivatedRoute,
     private medium: MediumService,
     private sanitizer: DomSanitizer,
-    private granim: GranimService) { }
+    private progress: NgProgress) { }
 
   ngOnInit() {
-    this.granim.granim.changeState('post');
     const id  = this.route.snapshot.paramMap.get('id');
-    this.post = this.getHtml(this.medium.items[id].content);
+    if (this.medium.items) {
+      this.post = this.getHtml(this.medium.items[id].content);
+    } else {
+      this.progress.start();
+      this.medium.fetchPosts()
+        .then(() => {
+          this.post = this.medium.items[id].content;
+          this.progress.complete();
+        });
+    }
   }
 
   getHtml(unsafe: string) {

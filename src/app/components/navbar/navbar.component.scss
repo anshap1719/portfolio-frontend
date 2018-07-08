@@ -26,6 +26,19 @@ nav {
       &:not(:last-of-type) {
         padding-right: 0;
       }
+      transition: color 0.6s;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .links {
+      width: 700px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .links {
+      width: 100%;
     }
   }
 }
@@ -45,14 +58,15 @@ img {
   width: auto;
 }
 
-a {
+a:not(.cta) {
   font-family: 'Montserrat Alternates', sans-serif;
   font-weight: 700;
   height: 2.2222vw;
   width: 6.9444vw;
-  &:not(:last-of-type) {
-    padding-right: 1.3888vw;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   &.home {
     &:link, &:visited {
       color: #fff;
@@ -77,8 +91,16 @@ a {
 .links {
   opacity: 1;
   transition: opacity 0.6s ease-in;
+  justify-content: space-around;
+  max-width: 550px;
   &.home {
     opacity: 0;
     transition: opacity 0.6s ease-in;
+  }
+}
+
+a.cta {
+  @media (max-width: 700px) {
+    display: none;
   }
 }

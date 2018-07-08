@@ -106,7 +106,10 @@ div.square-with-bg {
       display: block;
       position: static;
       top: 0;
-      margin-top: 20vw;
+
+      &:not(:first-of-type) {
+        margin-top: 20vw;
+      }
 
       &.multi-line-item:not(:first-of-type) {
         margin-top: 28vw;

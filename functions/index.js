@@ -17339,7 +17339,7 @@ exports.handler = function (event, context, callback) {
             title: item.title[0],
             link: item.link[0],
             categories: item.category,
-            data: item.pubDate[0],
+            date: item.pubDate[0],
             content: item['content:encoded'][0]
           };
           main.items.push(obj);

@@ -13,29 +13,42 @@ export class GranimService {
   element;
   once = 0;
   gradientChange = new EventEmitter();
+  stateChange = new EventEmitter<string>();
 
   constructor(router: Router, private meta: Meta) {
     router.events.subscribe(value => {
       if (value instanceof NavigationEnd) {
+        console.log(value.url);
         if (value.url.indexOf('home') !== -1 || value.url === '/') {
           this.default = 'home';
           if (this.granim) {
             this.granim.changeState('home');
+            this.stateChange.emit('home');
           }
         } else if (value.url.indexOf('about') !== -1) {
           this.default = 'about';
           if (this.granim) {
             this.granim.changeState('about');
+            this.stateChange.emit('about');
           }
         } else if (value.url.indexOf('contact') !== -1) {
           this.default = 'contact';
           if (this.granim) {
             this.granim.changeState('contact');
+            this.stateChange.emit('contact');
           }
-        } else if (value.url.indexOf('blog') !== -1) {
+        } else if (value.url.indexOf('/blog/posts/') !== -1) {
+          console.log('Executing This!!');
+          this.default = 'post';
+          if (this.granim) {
+            this.granim.changeState('post');
+            this.stateChange.emit('post');
+          }
+        } else if (value.url.indexOf('/blog') !== -1) {
           this.default = 'blog';
           if (this.granim) {
             this.granim.changeState('blog');
+            this.stateChange.emit('blog');
           }
         }
 
@@ -81,8 +94,8 @@ export class GranimService {
         },
         'blog': {
           gradients: [
-            ['#29323c', '#485563'],
-            ['#0D050E', '#2B193E'],
+            ['#02AAB0', '#00CDAC'],
+            ['#DA22FF', '#9733EE'],
             ['#003D73', '#132226'],
             ['#24C6DC', '#514A9D'],
           ],
@@ -100,5 +113,6 @@ export class GranimService {
       }
     });
     this.granim.changeState(this.default);
+    this.stateChange.emit(this.default);
   }
 }

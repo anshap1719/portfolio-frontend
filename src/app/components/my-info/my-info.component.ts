@@ -28,7 +28,11 @@ export class MyInfoComponent implements OnInit {
   ngOnInit() {
     this.isHome = Boolean(this.router.url === '/');
     if (!this.isMobile) {
-      this.urlState = this.router.url.split('/')[1];
+      if (this.router.url === '/blog/posts') {
+        this.urlState = 'about';
+      } else {
+        this.urlState = this.router.url.split('/')[1];
+      }
       if (this.urlState === 'about') {
         this.changeAnimateTextState({ toState: 'about' });
         this.changeAnimateImageState({ toState: 'about' });
@@ -40,7 +44,11 @@ export class MyInfoComponent implements OnInit {
       this.router.events.subscribe(value => {
         if (value instanceof NavigationEnd) {
           this.isHome = Boolean(value.url === '/');
-          this.urlState = value.url.split('/')[1];
+          if (this.router.url === '/blog/posts') {
+            this.urlState = 'about';
+          } else {
+            this.urlState = this.router.url.split('/')[1];
+          }
         }
       });
     } else {

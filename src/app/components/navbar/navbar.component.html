@@ -6,12 +6,14 @@
       [@heroState]="{value: animationState, params: { delay: delay }}"
       (@heroState.done)="animationComplete($event)"
       (click)="goToHome()">
-      <img src="/assets/logo.png" alt="">
+      <img [src]="logoImage" alt="">
     </div>
-    <div class="links" [class.home]="isHome">
-      <a class="home" [routerLink]="['/home']" routerLinkActive="active">Home</a>
-      <a class="home" [routerLink]="['/about']" routerLinkActive="active">About</a>
-      <a class="home" [routerLink]="['/contact']" routerLinkActive="active">Contact</a>
+    <div class="links horizontal-flex align-center" [class.home]="isHome">
+      <a class="home" [style.color]="textColor" [routerLink]="['/home']" routerLinkActive="active">Home</a>
+      <a class="home" [style.color]="textColor" [routerLink]="['/about']" routerLinkActive="active">About</a>
+      <a class="home" [style.color]="textColor" [routerLink]="['/contact']" routerLinkActive="active">Contact</a>
+      <a class="home" [style.color]="textColor" [routerLink]="['/blog', 'posts']" routerLinkActive="active">Blog</a>
+      <a class="home cta" href="https://upwork.com" target="_blank">Hire Me On Upwork</a>
     </div>
   </div>
 </nav>

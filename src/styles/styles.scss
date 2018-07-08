@@ -144,3 +144,30 @@ ng-progress[thick=true] .ng-bar-placeholder {
     height: 4px !important;
   }
 }
+
+a.cta {
+  flex: 0 0 14vw;
+  width: 14vw;
+  height: 2.77vw;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Work Sans', monospace;
+  font-size: 1.25vw;
+  color: #fff;
+  background: #1a1c1a;
+  text-decoration: none;
+  z-index: 2;
+  box-shadow: 0.3em 0.3em 0 0 #69a75f;
+  border-radius: 5px;
+  transition: all 0.2s ease-in;
+}
+
+a.cta:hover {
+  box-shadow: 0.4em 0.4em 0 0 #1a1c1a;
+  background: #69a75f;
+  transition: all 0.2s ease-in;
+  cursor: pointer;
+}
+

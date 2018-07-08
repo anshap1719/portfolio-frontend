@@ -19,7 +19,7 @@
     will-change: transform;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     max-width: 95vw;
     flex-wrap: wrap;
     justify-content: center;
@@ -80,5 +80,25 @@ h1 {
     -ms-transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
+  }
+}
+
+div.cta {
+  @media (min-width: 701px) {
+    display: none;
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+
+  a.cta {
+    width: 300px;
+    flex: 0 0 300px;
+    font-size: 5vw;
+    height: 50px;
+    margin-top: 30px;
   }
 }
