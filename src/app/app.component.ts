@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
       this.router.navigate(['/home']);
     }
     this.isHome = this.router.url === '/';
-    this.isBlog = this.router.url.indexOf('blog') === -1;
+    this.isBlog = this.router.url.indexOf('blog') !== -1;
     this.router.events.subscribe(value => {
       if (value instanceof NavigationEnd) {
         this.isHome = this.router.url === '/';
