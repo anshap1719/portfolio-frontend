@@ -16,7 +16,7 @@ export class BlogComponent implements OnInit {
     this.medium.itemsUpdated.subscribe(items => {
       this.items = items;
       this.html = items[0].content;
-    }).unsubscribe();
+    });
     this.medium.fetchPosts();
   }
 }
