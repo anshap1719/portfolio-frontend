@@ -27,12 +27,12 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (this.router.url === '/' && this.device.isMobile()) {
-      this.router.navigate(['/home']);
-    }
     this.isHome = this.router.url === '/';
     this.router.events.subscribe(value => {
       if (value instanceof NavigationEnd) {
+        if (value.urlAfterRedirects === '/' && this.isMobile) {
+          this.router.navigate(['/home']);
+        }
         this.isHome = this.router.url === '/';
         this.isBlog = this.router.url.indexOf('/blog/posts/') !== -1;
         setTimeout(() => {

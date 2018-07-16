@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "netlify": "netlify-lambda serve ./functions-source"
+    "netlify": "netlify-lambda serve ./functions-source",
+    "serve": "ng serve --proxy-config proxy.conf.json --host 172.20.10.5"
   },
   "private": true,
   "dependencies": {

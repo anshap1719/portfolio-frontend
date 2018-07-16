@@ -99,47 +99,49 @@ div.square-with-bg {
   max-width: 90vw;
   margin: auto;
   font-size: 0;
+}
 
-  @media (max-width: 600px) {
-    .list-item {
-      width: 100% !important;
+.item-list.mobile {
+  margin-top: 100px;
+
+  .list-item {
+    width: 100% !important;
+    display: block;
+    position: static;
+    top: 0;
+
+    &:not(:first-of-type) {
+      margin-top: 20vw;
+    }
+
+    &.multi-line-item:not(:first-of-type) {
+      margin-top: 28vw;
+    }
+
+    .square-with-bg {
       display: block;
-      position: static;
-      top: 0;
+    }
 
-      &:not(:first-of-type) {
-        margin-top: 20vw;
-      }
+    .title {
+      font-size: 8vw;
+      text-align: center;
+      right: 0;
+      color: #000;
+      background: #fff;
+      padding: 10px 0;
+    }
 
-      &.multi-line-item:not(:first-of-type) {
-        margin-top: 28vw;
-      }
+    h2.description {
+      opacity: 1;
+      font-size: 5.333vw;
+      line-height: 6.3996vw;
+      font-family: 'Montserrat Alternates', sans-serif;
+      color: #fff;
+      margin: -18vw auto auto;
+      text-align: center;
 
-      .square-with-bg {
-        display: block;
-      }
-
-      .title {
-        font-size: 8vw;
-        text-align: center;
-        right: 0;
-        color: #000;
-        background: #fff;
-        padding: 10px 0;
-      }
-
-      h2.description {
-        opacity: 1;
-        font-size: 5.333vw;
-        line-height: 6.3996vw;
-        font-family: 'Montserrat Alternates', sans-serif;
-        color: #fff;
-        margin: -18vw auto auto;
-        text-align: center;
-
-        &.multi-line {
-          margin: -25vw auto auto;
-        }
+      &.multi-line {
+        margin: -25vw auto auto;
       }
     }
   }
