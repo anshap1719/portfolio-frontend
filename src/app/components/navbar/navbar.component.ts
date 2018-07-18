@@ -18,6 +18,7 @@ export class NavbarComponent implements OnInit {
   isMobile;
   textColor = '#fff';
   logoImage = '/assets/logo.png';
+  mobilenavOpen = false;
 
   constructor(private router: Router, device: DeviceService, private granim: GranimService) {
     this.isMobile = device.isMobile();

@@ -1,4 +1,4 @@
-nav {
+nav.deskNav {
   padding: 0 2.77vw;
   height: 6.9444vw;
   display: flex;
@@ -7,7 +7,7 @@ nav {
     flex: 0 0 calc(100% - 2.7777vw);
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 1000px) {
     height: 100px;
 
     .logo {
@@ -41,6 +41,52 @@ nav {
       width: 100%;
     }
   }
+
+  img {
+    max-height: 100%;
+    width: auto;
+  }
+
+  a:not(.cta) {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 700;
+    height: 2.2222vw;
+    width: 6.9444vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.home {
+      &:link, &:visited {
+        color: #fff;
+        text-decoration: none;
+      }
+      &:hover, &:active {
+        opacity: 1;
+        transition: opacity 0.2s ease-in-out;
+      }
+      &:link:not(.active), &:visited:not(.active) {
+        opacity: 0.5;
+        transition: opacity 0.2s ease-in-out;
+      }
+
+      &:hover:not(.active), &:active:not(.active) {
+        opacity: 1;
+        transition: opacity 0.2s ease-in-out;
+      }
+    }
+  }
+
+  .links {
+    opacity: 1;
+    transition: opacity 0.6s ease-in;
+    justify-content: space-around;
+    max-width: 550px;
+    &.home {
+      opacity: 0;
+      transition: opacity 0.6s ease-in;
+    }
+  }
 }
 
 .logo {
@@ -51,56 +97,171 @@ nav {
   z-index: 99;
   cursor: pointer;
   will-change: transform, scale;
+
+  @media (max-width: 1000px) {
+    max-height: 80%;
+    width: auto;
+  }
 }
 
-img {
-  max-height: 100%;
-  width: auto;
-}
+// Mobile Navbar
+@import url(https://fonts.googleapis.com/css?family=Ek+Mukta:200);
 
-a:not(.cta) {
-  font-family: 'Montserrat Alternates', sans-serif;
-  font-weight: 700;
-  height: 2.2222vw;
-  width: 6.9444vw;
+
+$cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99);
+$mukta: 'Ek Mukta', sans-serif;;
+
+$menuItems: 4;
+
+.header.mobile {
+  position: absolute;
   display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &.home {
-    &:link, &:visited {
-      color: #fff;
-      text-decoration: none;
-    }
-    &:hover, &:active {
-      opacity: 1;
-      transition: opacity 0.2s ease-in-out;
-    }
-    &:link:not(.active), &:visited:not(.active) {
-      opacity: 0.5;
-      transition: opacity 0.2s ease-in-out;
-    }
-
-    &:hover:not(.active), &:active:not(.active) {
-      opacity: 1;
-      transition: opacity 0.2s ease-in-out;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  height: 80px;
+  padding-top: 10px;
+  width: 100%;
+  overflow: hidden;
+  transition: all 0.5s ease-out, background 1s ease-out;
+  transition-delay: 0.2s;
+  z-index: 1;
+  .logo {
+    max-height: 50px !important;
+    img {
+      height: 50px !important;
+      position: relative;
+      top: -5px;
+      left: 15px;
     }
   }
-}
-
-.links {
-  opacity: 1;
-  transition: opacity 0.6s ease-in;
-  justify-content: space-around;
-  max-width: 550px;
-  &.home {
-    opacity: 0;
-    transition: opacity 0.6s ease-in;
+  .burger-container {
+    justify-self: flex-end;
+    position: relative;
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition: all 0.3s $cubic;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    #burger {
+      width: 18px;
+      height: 8px;
+      position: relative;
+      display: block;
+      margin: -4px auto 0;
+      top: 50%;
+      .bar {
+        width: 100%;
+        height: 1px;
+        display: block;
+        position: relative;
+        background: #FFF;
+        transition: all 0.3s $cubic;
+        transition-delay: 0s;
+        &.topBar {
+          transform: translateY(0px) rotate(0deg);
+        }
+        &.btmBar {
+          transform: translateY(6px) rotate(0deg);
+        }
+      }
+    }
   }
-}
-
-a.cta {
-  @media (max-width: 700px) {
-    display: none;
+  .icon {
+    display: inline-block;
+    position: absolute;
+    height: 100%;
+    line-height: 50px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    color: #FFF;
+    font-size: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    &.icon-bag {
+      right: 0;
+      top: 0;
+      left: auto;
+      transform: translateX(0px);
+      transition: transform 0.5s $cubic;
+      transition-delay: 0.65s;
+    }
+  }
+  ul.menu {
+    height: 70%;
+    margin: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    padding: 0 48px 0;
+    list-style: none;
+    li.menu-item {
+      padding-bottom: 5px;
+      //border-bottom: 1px solid #333;
+      margin-top: 30px;
+      transform: scale(1.15) translateY(-30px);
+      opacity: 0;
+      transition: transform 0.5s $cubic, opacity 0.6s $cubic;
+      @for $i from 1 through $menuItems {
+        &:nth-child(#{$i}) {
+          transition-delay: #{0.56 - ($i * 0.07)}s;
+        }
+      }
+      a {
+        display: block;
+        position: relative;
+        color: #FFF;
+        font-family: $mukta;
+        text-decoration: none;
+        font-size: 30px;
+        line-height: 2.35;
+        font-weight: 200;
+        width: 100%;
+      }
+    }
+  }
+  &.menu-opened {
+    height: 100%;
+    background-color: #000;
+    transition: background 0.5s ease-in, all 0.3s ease-in;
+    transition-delay: 0.25s;
+    .burger-container {
+      transform: rotate(90deg);
+      #burger {
+        .bar {
+          transition: all 0.4s $cubic;
+          transition-delay: 0.2s;
+          &.topBar {
+            transform: translateY(4px) rotate(45deg);
+          }
+          &.btmBar {
+            transform: translateY(3px) rotate(-45deg);
+          }
+        }
+      }
+    }
+    ul.menu {
+      li.menu-item {
+        transform: scale(1) translateY(0px);
+        opacity: 1;
+        @for $i from 1 through $menuItems {
+          &:nth-child(#{$i}) {
+            transition-delay: #{0.07 * $i+0.2}s;
+          }
+        }
+      }
+    }
+    .icon {
+      &.icon-bag {
+        transform: translateX(75px);
+        transition-delay: 0.3s;
+      }
+    }
   }
 }

@@ -18,7 +18,11 @@ export class AppComponent implements OnInit {
 
   @ViewChild('granim') granimElement: ElementRef;
 
-  constructor(private router: Router, config: NgsRevealConfig, private granim: GranimService, private device: DeviceService) {
+  constructor(
+    private router: Router,
+    config: NgsRevealConfig,
+    private granim: GranimService,
+    private device: DeviceService) {
     config.duration = 1200;
     config.easing = 'cubic-bezier(0.6, 0.2, 0.1, 1)';
     config.distance = '200px';

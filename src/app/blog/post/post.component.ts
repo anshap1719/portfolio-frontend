@@ -4,6 +4,7 @@ import {MediumService} from '../../services/medium.service';
 import {DomSanitizer} from '@angular/platform-browser';
 import {GranimService} from '../../services/granim.service';
 import {NgProgress} from '@ngx-progressbar/core';
+import {MetaTagsService} from '../../services/meta-tags.service';
 
 @Component({
   selector: 'app-post',
@@ -17,7 +18,8 @@ export class PostComponent implements OnInit {
     private route: ActivatedRoute,
     private medium: MediumService,
     private sanitizer: DomSanitizer,
-    private progress: NgProgress) { }
+    private progress: NgProgress,
+    private metaTags: MetaTagsService) { }
 
   ngOnInit() {
     const id  = this.route.snapshot.paramMap.get('id');
@@ -29,6 +31,8 @@ export class PostComponent implements OnInit {
         .then(() => {
           this.post = this.medium.items[id].content;
           this.progress.complete();
+
+          this.metaTags.init();
         });
     }
   }
