@@ -1,8 +1,0 @@
-<div class="blog-list-container" *ngIf="items">
-  <h3>I mostly write about technical stuff like guides and tutorials. These blogs are written on Medium, if you like what you read, please support me by following me on <a href="https://medium.com/@anshap1719" target="_blank">Medium</a> or sharing my posts.</h3>
-  <div class="blog-list-item" *ngFor="let item of items; let i = index" ngsReveal>
-    <h3 class="title">{{item.title}}</h3>
-    <h4 class="date">Published: {{item.pubDate | date}}</h4>
-    <h4 class="read"><a [routerLink]="['/blog', 'posts', i]">Read</a></h4>
-  </div>
-</div>
