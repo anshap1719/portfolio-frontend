@@ -16,6 +16,7 @@
     "@ngx-progressbar/core": "^5.0.1",
     "@ngx-progressbar/http": "^5.0.1",
     "@ngx-progressbar/router": "^5.0.1",
+    "@ngx-lite/json-ld": "^0.4.2",
     "core-js": "^2.5.7",
     "countup.js-angular2": "^6.0.1",
     "express": "^4.16.3",
