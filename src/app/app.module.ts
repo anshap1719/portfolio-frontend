@@ -18,6 +18,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {ContactModule} from './contact/contact.module';
 import {AboutModule} from './about/about.module';
 import {HomeModule} from './home/home.module';
+import {NgxJsonLdModule} from '@ngx-lite/json-ld';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import {HomeModule} from './home/home.module';
     NgProgressRouterModule,
     HomeModule,
     AboutModule,
-    ContactModule
+    ContactModule,
+    NgxJsonLdModule
   ],
   providers: [
   ],

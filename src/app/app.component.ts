@@ -17,6 +17,25 @@ export class AppComponent implements OnInit {
   progressColor = '#fff';
   isBlog;
   isBrowser;
+  schema = {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": "Anshul Sanghi",
+    "url": "https://anshulsanghi.tech",
+    "sameAs": [
+      "https://www.facebook.com/anshap1719",
+      "https://www.instagram.com/_digital__nomad_/",
+      "https://www.linkedin.com/in/anshap1719",
+      "https://twitter.com/anshap1719"
+    ],
+    "logo": "https://anshulsanghi.tech/assets/logo-red.png",
+    "contactPoint": [
+      { "@type": "ContactPoint",
+        "telephone": "+917020670390",
+        "contactType": "sales"
+      }
+    ]
+  };
 
   @ViewChild('granim') granimElement: ElementRef;
 
