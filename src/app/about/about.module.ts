@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { AboutComponent } from './about.component';
 import {routing} from './about-routing.module';
-import {NgsRevealModule} from 'ng-scrollreveal';
+import {NgsRevealModule} from '../ngs';
 import { SkillsComponent } from './skills/skills.component';
 import {CountUpModule} from 'countup.js-angular2';
 import { StatsComponent } from './stats/stats.component';

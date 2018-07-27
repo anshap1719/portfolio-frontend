@@ -1,8 +1,9 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, Inject, OnInit, PLATFORM_ID, ViewChild} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
-import {NgsRevealConfig} from 'ng-scrollreveal';
+import {NgsRevealConfig} from './ngs';
 import {GranimService} from './services/granim.service';
 import {DeviceService} from './services/device.service';
+import {isPlatformBrowser} from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ export class AppComponent implements OnInit {
   isMobile = false;
   progressColor = '#fff';
   isBlog;
+  isBrowser;
 
   @ViewChild('granim') granimElement: ElementRef;
 
@@ -22,12 +24,14 @@ export class AppComponent implements OnInit {
     private router: Router,
     config: NgsRevealConfig,
     private granim: GranimService,
-    private device: DeviceService) {
+    private device: DeviceService,
+    @Inject(PLATFORM_ID) private platformId) {
     config.duration = 1200;
     config.easing = 'cubic-bezier(0.6, 0.2, 0.1, 1)';
     config.distance = '200px';
     config.mobile = true;
     this.isMobile = this.device.isMobile();
+    this.isBrowser = isPlatformBrowser(platformId);
   }
 
   ngOnInit() {
@@ -42,8 +46,10 @@ export class AppComponent implements OnInit {
         setTimeout(() => {
           this.hideFooter = !Boolean(this.router.url === '/home');
         }, 500);
-        (<any>window).ga('set', 'page', value.urlAfterRedirects);
-        (<any>window).ga('send', 'pageview');
+        if (this.isBrowser) {
+          (<any>window).ga('set', 'page', value.urlAfterRedirects);
+          (<any>window).ga('send', 'pageview');
+        }
         this.router.url.indexOf('blog') === -1 ? this.progressColor = '#fff' : this.progressColor = 'red';
       }
     });

@@ -5,15 +5,15 @@ import {EmptyComponent} from './components/empty/empty.component';
 const routes: Route[] = [
   {
     path: 'home',
-    loadChildren: 'src/app/home/home.module#HomeModule'
+    loadChildren: './home/home.module#HomeModule'
   },
   {
     path: 'about',
-    loadChildren: 'src/app/about/about.module#AboutModule'
+    loadChildren: './about/about.module#AboutModule'
   },
   {
     path: 'contact',
-    loadChildren: 'src/app/contact/contact.module#ContactModule'
+    loadChildren: './contact/contact.module#ContactModule'
   },
   {
     path: '',

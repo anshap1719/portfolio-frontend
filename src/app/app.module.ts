@@ -10,11 +10,14 @@ import {routing} from './app-routing.module';
 import { MyInfoComponent } from './components/my-info/my-info.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { EmptyComponent } from './components/empty/empty.component';
-import {NgsRevealModule} from 'ng-scrollreveal';
+import {NgsRevealModule} from './ngs';
 import {NgProgressModule} from '@ngx-progressbar/core';
 import {NgProgressHttpModule} from '@ngx-progressbar/http';
 import {NgProgressRouterModule} from '@ngx-progressbar/router';
 import {HttpClientModule} from '@angular/common/http';
+import {ContactModule} from './contact/contact.module';
+import {AboutModule} from './about/about.module';
+import {HomeModule} from './home/home.module';
 
 
 @NgModule({
@@ -25,7 +28,7 @@ import {HttpClientModule} from '@angular/common/http';
     EmptyComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
     CommonModule,
     RouterModule,
@@ -34,7 +37,10 @@ import {HttpClientModule} from '@angular/common/http';
     routing,
     NgProgressModule.forRoot(),
     NgProgressHttpModule,
-    NgProgressRouterModule
+    NgProgressRouterModule,
+    HomeModule,
+    AboutModule,
+    ContactModule
   ],
   providers: [
   ],

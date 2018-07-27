@@ -6,7 +6,7 @@ import { ContactComponent } from './contact.component';
 import { ContactDetailsComponent } from './contact-details/contact-details.component';
 import { FormComponent } from './form/form.component';
 import {FormsModule} from '@angular/forms';
-import {NgsRevealModule} from 'ng-scrollreveal';
+import {NgsRevealModule} from '../ngs';
 import {ContactService} from '../services/contact.service';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterModule} from '@angular/router';

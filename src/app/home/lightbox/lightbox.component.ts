@@ -1,7 +1,8 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Inject, Input, OnInit, Output, PLATFORM_ID} from '@angular/core';
 import {PortfoliosService} from '../../services/portfolios.service';
 import {DomSanitizer} from '@angular/platform-browser';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import {isPlatformBrowser} from '@angular/common';
 
 @Component({
   selector: 'app-lightbox',
@@ -29,23 +30,29 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 export class LightboxComponent implements OnInit {
   activeItem;
   items;
+  isBrowser;
 
   @Input('activeIndex') activeIndex: number;
   @Input('lightbox') lightbox: boolean;
   @Output('close') close = new EventEmitter();
 
-  constructor(portfolio: PortfoliosService, private sanitizer: DomSanitizer) {
+  constructor(portfolio: PortfoliosService, private sanitizer: DomSanitizer, @Inject(PLATFORM_ID) private platformId) {
     this.items = portfolio.items;
+    this.isBrowser = isPlatformBrowser(platformId);
   }
 
   ngOnInit() {
     this.activeItem = this.items[this.activeIndex];
-    (<any>document).querySelector('body').classList.add('no-scroll');
+    if (this.isBrowser) {
+      (<any>document).querySelector('body').classList.add('no-scroll');
+    }
   }
 
   closeLightbox() {
     this.lightbox = false;
-    (<any>document).querySelector('body').classList.remove('no-scroll');
+    if (this.isBrowser) {
+      (<any>document).querySelector('body').classList.remove('no-scroll');
+    }
     setTimeout(() => {
       this.close.emit();
     }, 400);

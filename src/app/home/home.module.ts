@@ -5,7 +5,7 @@ import {routing} from './home-routing.module';
 import {HomeComponent} from './home.component';
 import {PortfoliosComponent} from './portfolios/portfolios.component';
 import {RouterModule} from '@angular/router';
-import {NgsRevealModule} from 'ng-scrollreveal';
+import {NgsRevealModule} from '../ngs';
 import { TagComponent } from './portfolios/tag/tag.component';
 import { LightboxComponent } from './lightbox/lightbox.component';
 import {NgProgressHttpModule} from '@ngx-progressbar/http';
