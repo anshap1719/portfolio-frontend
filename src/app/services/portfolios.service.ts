@@ -6,6 +6,13 @@ import { Injectable } from '@angular/core';
 export class PortfoliosService {
   items = [
     {
+      title: 'Atsign Website Redesign',
+      description: 'AtSign is the world\'s first keyword-based lead generation search engine. Users can enter any query that comes to mind and get back contact information. They can enter general keywords like, "dentist" or focused keywords like "dental equipment" or even specific products like, "dental surgical tool" and our tool will return a list of matching businesses and their respective contact information for outreach purposes. AtSign\'s search engine helps businesses search and export valuable business contact info data into a spreadsheet. This contact information empowers sales teams and marketing professionals. I was tasked with developing their new website.',
+      image: '/assets/atsign.png',
+      url: 'https://atsign.co',
+      tags: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'jQuery']
+    },
+    {
       title: 'Rolando Mathias\' Portfolio Website',
       description: 'Rolando Mathias, a Sweden based Product Designer hired me to build his website based on his designs on two separate occasions. The challenge for this project was that I was supposed to make it using as less JavaScript code as possible. The result is a website that is fluidically responsive, uses just a few lines of JavaScript (20-25 lines), uses no CSS or JavaScript frameworks, and has a navigation system that is completely based off of CSS.<br><br>To read more about how I achieved the last bit, click <a href="https://medium.com/@anshap1719/css-is-more-powerful-than-you-think-it-is-25ff2f6df468" target="_blank">here</a>',
       image: '/assets/rolando.png',
