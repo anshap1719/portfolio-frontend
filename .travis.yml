@@ -15,7 +15,8 @@ script:
   - ng build --prod
   - ng run portfolio:server
   - cd functions && npm install && cd ../
-  - cp -a functions/dist/browser/. public/
+  - mkdir public
+  - cp -a functions/dist/browser/. ./public/
   - mv public/index.html public/index2.html
 
 after_success:
