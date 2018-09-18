@@ -12,7 +12,7 @@ before_script:
   - rm -rf ./public
 
 script:
-  - ng build --prod
+  - ng build --prod --base-href="https://anshulsanghi.tech/"
   - ng run portfolio:server
   - cd functions && npm install && cd ../
   - cp -a functions/dist/browser/. public/
