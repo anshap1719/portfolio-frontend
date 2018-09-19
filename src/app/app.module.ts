@@ -1,4 +1,3 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 
@@ -29,7 +28,6 @@ import {NgxJsonLdModule} from '@ngx-lite/json-ld';
     EmptyComponent,
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
     CommonModule,
     RouterModule,

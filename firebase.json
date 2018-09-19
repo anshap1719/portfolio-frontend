@@ -1,15 +1,15 @@
 {
   "hosting": {
-    "public": "public",
+    "public": "dist/portfolio",
     "ignore": [
       "firebase.json",
-      "**/.@(!babelrc)",
+      "**/.*",
       "**/node_modules/**"
     ],
     "rewrites": [
       {
         "source": "**",
-        "function": "ssr"
+        "destination": "/index.html"
       }
     ]
   }

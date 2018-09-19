@@ -13,11 +13,6 @@ before_script:
 
 script:
   - ng build --prod
-  - ng run portfolio:server
-  - cd functions && npm install && cd ../
-  - mkdir public
-  - cp -a functions/dist/browser/. ./public/
-  - mv public/index.html public/index2.html
 
 after_success:
   - firebase deploy --token $FIREBASE_TOKEN

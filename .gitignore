@@ -7,7 +7,7 @@
 
 # dependencies
 /node_modules
-/functions-source/node_modules
+/functions-deprecated/node_modules
 # IDEs and editors
 /.idea
 .project
