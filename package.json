@@ -31,7 +31,6 @@
     "@ngx-progressbar/router": "^5.2.1",
     "angular2-counto": "^1.2.5",
     "core-js": "^2.5.7",
-    "countup.js-angular2": "^6.0.1",
     "granim": "^1.1.1",
     "ng-scrollreveal": "^2.2.0",
     "rxjs": "^6.3.3",
