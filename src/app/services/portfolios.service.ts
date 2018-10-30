@@ -13,11 +13,11 @@ export class PortfoliosService {
       tags: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'jQuery']
     },
     {
-      title: 'Rolando Mathias\' Portfolio Website',
-      description: 'Rolando Mathias, a Sweden based Product Designer hired me to build his website based on his designs on two separate occasions. The challenge for this project was that I was supposed to make it using as less JavaScript code as possible. The result is a website that is fluidically responsive, uses just a few lines of JavaScript (20-25 lines), uses no CSS or JavaScript frameworks, and has a navigation system that is completely based off of CSS.<br><br>To read more about how I achieved the last bit, click <a href="https://medium.com/@anshap1719/css-is-more-powerful-than-you-think-it-is-25ff2f6df468" target="_blank">here</a>',
-      image: '/assets/rolando.png',
-      url: 'https://rolandomathi.as',
-      tags: ['HTML', 'CSS', 'JavaScript', 'Zeplin', 'Gulp']
+      title: 'HealthGPS Website Redesign',
+      description: 'HealthGPS is a full service “Medical Tourism” firm. Our focus is on helping upscale patients receive medical and/or wellness services in foreign countries through the tie-up with world-class medical hospitals, clinics, doctors and Insurance providers in India, Russia, Malaysia, Thailand, Singapore, UAE, Greece & Germany. Our aim is to help patients reach out to quality and affordable healthcare anywhere in the world. I was tasked with developing their new website in Angular 7 and improving their existing backend APIs in NodeJS and MongoDB to support new search features and blog feature.',
+      image: '/assets/healthgps.png',
+      url: 'https://healthgps.com',
+      tags: ['Angular', 'NodeJS', 'MongoDB', 'AWS EC2', 'HTML', 'CSS', 'JavaScript', 'Bootstrap', 'jQuery']
     },
     {
       title: 'Greater Commons',

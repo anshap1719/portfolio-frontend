@@ -1,32 +1,59 @@
 <div class="count-up" *ngIf="!isMobile" ngsReveal>
   <div class="horizontal-flex justify-between">
     <div class="vertical-flex">
-      <h1 [countUp]="countUp" [endVal]="1500" [duration]="3">0</h1>
+      <h1>
+        <span
+          counto [step]="3000 / 1500"
+          [duration]="1.5"
+          [countFrom]="0"
+          [countTo]="1500"
+          (countoChange)="counto1 = $event">
+          {{ counto1 | number: '1.0-0' }}
+        </span>+
+      </h1>
       <h2>Hours Worked</h2>
     </div>
     <div class="vertical-flex">
-      <h1 [countUp]="countUp" [endVal]="80000" [duration]="3">0</h1>
+      <h1>
+        <span
+          counto [step]="3000 / 16000"
+          [duration]="0.15"
+          [countFrom]="0"
+          [countTo]="80000"
+          (countoChange)="counto2 = $event">
+          {{ counto2 | number: '1.0-0' }}
+        </span>+
+      </h1>
       <h2>Lines Of Code Written</h2>
     </div>
     <div class="vertical-flex">
-      <h1 [countUp]="countUp" [endVal]="50" [duration]="3">0</h1>
+      <h1>
+        <span
+          counto [step]="3000 / 50"
+          [duration]="3"
+          [countFrom]="0"
+          [countTo]="50"
+          (countoChange)="counto3 = $event">
+          {{ counto3 | number: '1.0-0' }}
+        </span>+
+      </h1>
       <h2>Projects Completed</h2>
     </div>
   </div>
 </div>
-<div class="count-up" *ngIf="isMobile">
-  <div class="vertical-flex justify-between">
-    <div class="vertical-flex" ngsReveal>
-      <h1 [countUp]="countUp" [endVal]="1500" [duration]="3">0</h1>
-      <h2>Hours Worked</h2>
-    </div>
-    <div class="vertical-flex" ngsReveal>
-      <h1 [countUp]="countUp" [endVal]="80000" [duration]="3">0</h1>
-      <h2>Lines Of Code Written</h2>
-    </div>
-    <div class="vertical-flex" ngsReveal>
-      <h1 [countUp]="countUp" [endVal]="50" [duration]="3">0</h1>
-      <h2>Projects Completed</h2>
-    </div>
-  </div>
-</div>
+<!--<div class="count-up" *ngIf="isMobile">-->
+  <!--<div class="vertical-flex justify-between">-->
+    <!--<div class="vertical-flex" ngsReveal>-->
+      <!--<h1 [countUp]="countUp" [endVal]="1500" [duration]="3">0</h1>-->
+      <!--<h2>Hours Worked</h2>-->
+    <!--</div>-->
+    <!--<div class="vertical-flex" ngsReveal>-->
+      <!--<h1 [countUp]="countUp" [endVal]="80000" [duration]="3">0</h1>-->
+      <!--<h2>Lines Of Code Written</h2>-->
+    <!--</div>-->
+    <!--<div class="vertical-flex" ngsReveal>-->
+      <!--<h1 [countUp]="countUp" [endVal]="50" [duration]="3">0</h1>-->
+      <!--<h2>Projects Completed</h2>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->

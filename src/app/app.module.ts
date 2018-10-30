@@ -14,9 +14,6 @@ import {NgProgressModule} from '@ngx-progressbar/core';
 import {NgProgressHttpModule} from '@ngx-progressbar/http';
 import {NgProgressRouterModule} from '@ngx-progressbar/router';
 import {HttpClientModule} from '@angular/common/http';
-import {ContactModule} from './contact/contact.module';
-import {AboutModule} from './about/about.module';
-import {HomeModule} from './home/home.module';
 import {NgxJsonLdModule} from '@ngx-lite/json-ld';
 
 
@@ -37,9 +34,6 @@ import {NgxJsonLdModule} from '@ngx-lite/json-ld';
     NgProgressModule.forRoot(),
     NgProgressHttpModule,
     NgProgressRouterModule,
-    HomeModule,
-    AboutModule,
-    ContactModule,
     NgxJsonLdModule
   ],
   providers: [

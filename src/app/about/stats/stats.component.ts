@@ -7,12 +7,9 @@ import {DeviceService} from '../../services/device.service';
   styleUrls: ['./stats.component.scss']
 })
 export class StatsComponent implements OnInit {
-  countUp = {
-    useEasing: false,
-    useGrouping: true,
-    separator: ',',
-    suffix: '+'
-  };
+  counto1;
+  counto2;
+  counto3;
   isMobile = false;
 
   constructor(device: DeviceService) {
