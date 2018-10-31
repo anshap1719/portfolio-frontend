@@ -8,6 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "deploy": "ng build --prod --base-href=\"https://anshulsanghi.tech\" && firebase deploy",
     "netlify": "netlify-lambda serve ./functions-source",
     "serve": "ng serve --proxy-config proxy.conf.json --host 172.20.10.5",
     "build:netlify": "ng build --prod && ng build --prod --project=portfolio-ssr && cp server.ts > dist/server.ts"
