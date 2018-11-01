@@ -20,7 +20,7 @@ export const animations = [
       textAlign: '*'
     })),
     state('about',   style({
-      marginTop: '10vh',
+      marginTop: '12vh',
       transform: 'translate(-10.833vw, 0) scale({{scale}})',
       textAlign: 'center'
     }),
@@ -28,7 +28,7 @@ export const animations = [
         params: { scale: '0.4'}
       }),
     state('contact',   style({
-      marginTop: '10vh',
+      marginTop: '12vh',
       transform: 'translate(-32vw, 3vh) scale({{scale}})',
       textAlign: 'left'
     }),
