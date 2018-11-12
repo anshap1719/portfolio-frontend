@@ -1,0 +1,40 @@
+[debug] [2018-11-12T16:42:43.991Z] ----------------------------------------------------------------------
+[debug] [2018-11-12T16:42:43.993Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2018-11-12T16:42:43.993Z] CLI Version:   6.0.0
+[debug] [2018-11-12T16:42:43.993Z] Platform:      darwin
+[debug] [2018-11-12T16:42:43.993Z] Node Version:  v8.11.4
+[debug] [2018-11-12T16:42:43.994Z] Time:          Mon Nov 12 2018 22:12:43 GMT+0530 (IST)
+[debug] [2018-11-12T16:42:43.994Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-11-12T16:42:44.001Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-11-12T16:42:44.001Z] > authorizing via signed-in user
+[debug] [2018-11-12T16:42:44.001Z] [iam] checking project anshulsanghi-portfolio for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2018-11-12T16:42:44.002Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-11-12T16:42:44.002Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2018-11-12T16:42:54.523Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-12T16:42:54.535Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/anshulsanghi-portfolio:testIamPermissions  
+
+[debug] [2018-11-12T16:42:58.181Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-12T16:42:58.183Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/anshulsanghi-portfolio  
+ 
+[debug] [2018-11-12T16:43:07.507Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'anshulsanghi-portfolio'...
+[info] 
+[info] i  deploying hosting
+[debug] [2018-11-12T16:43:07.510Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/anshulsanghi-portfolio/versions  
+
+[debug] [2018-11-12T16:43:12.322Z] <<< HTTP RESPONSE 200
+[info] i  hosting[anshulsanghi-portfolio]: beginning deploy...
+[info] i  hosting[anshulsanghi-portfolio]: found 55 files in dist/portfolio
+[debug] [2018-11-12T16:43:12.338Z] [hosting] hash cache [ZGlzdC9wb3J0Zm9saW8] load error: lines is not defined
+[debug] [2018-11-12T16:43:12.421Z] [hosting] hash cache [ZGlzdC9wb3J0Zm9saW8] stored for 55 files
+[debug] [2018-11-12T16:43:12.421Z] [hosting][hash queue][FINAL]
+[debug] [2018-11-12T16:43:12.421Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/anshulsanghi-portfolio/versions/e4b68906946d54cd:populateFiles  
+ <request body omitted>
+[debug] [2018-11-12T16:43:17.531Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-12T16:43:17.536Z] [hosting][populate queue][FINAL]
+[debug] [2018-11-12T16:43:17.536Z] [hosting] uploads queued: 2
+[debug] [2018-11-12T16:43:55.549Z] [uploadQueue] Retrying task ef144bb1d3303e33e662fc9cb854777662c832ec5a96d5f2723fe5525793094f
+[debug] [2018-11-12T16:44:08.143Z] [uploadQueue] Retrying task e6f888a28114a86eb9a94a904dcf2e0347d55e7ab13758f4b1788722cfa69504
