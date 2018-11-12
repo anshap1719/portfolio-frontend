@@ -6,6 +6,7 @@ import {isPlatformBrowser} from '@angular/common';
 })
 export class DeviceService {
   isBrowser;
+  webP;
 
   constructor(@Inject(PLATFORM_ID) private platformId) {
     this.isBrowser = isPlatformBrowser(platformId);
@@ -16,6 +17,18 @@ export class DeviceService {
       return (<any>window).innerWidth < 1000;
     } else {
       return false;
+    }
+  }
+
+  hasWebPSupport() {
+    const elem = document.createElement('canvas') as any;
+
+    if (!!(elem.getContext && elem.getContext('2d'))) {
+      // was able or not to get WebP representation
+      this.webP =  elem.toDataURL('image/webp').indexOf('data:image/webp') === 0;
+    } else {
+      // very old browser like IE 8, canvas not supported
+      this.webP = false;
     }
   }
 }

@@ -20,12 +20,14 @@ export class MyInfoComponent implements OnInit {
   width = '30%';
   scale = '0.4';
   isMobile;
+  supportsWebP;
 
-  constructor(private router: Router, device: DeviceService) {
+  constructor(private router: Router, private device: DeviceService) {
     this.isMobile = device.isMobile();
   }
 
   ngOnInit() {
+    this.supportsWebP = this.device.webP;
     this.isHome = Boolean(this.router.url === '/');
     if (!this.isMobile) {
       if (this.router.url === '/blog/posts') {

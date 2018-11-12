@@ -17,14 +17,15 @@ export class NavbarComponent implements OnInit {
   delay;
   isMobile;
   textColor = '#fff';
-  logoImage = '/assets/logo.png';
+  logoImage: string;
   mobilenavOpen = false;
 
-  constructor(private router: Router, device: DeviceService, private granim: GranimService) {
-    this.isMobile = device.isMobile();
+  constructor(private router: Router, private device: DeviceService, private granim: GranimService) {
+    this.isMobile = this.device.isMobile();
   }
 
   ngOnInit() {
+    this.logoImage = `/assets/logo.${this.device.webP ? 'webp' : 'png'}`;
     if (!this.isMobile) {
       this.animationState = 'active';
       this.router.events.subscribe(value => {
@@ -32,9 +33,9 @@ export class NavbarComponent implements OnInit {
           value.url === '/' ? this.delay = 2000 : this.delay = 300;
           this.animationState = 'inactive';
           if (value.url.indexOf('/blog/posts/') !== -1) {
-            this.logoImage = '/assets/logo-red.png';
+            this.logoImage = `/assets/logo-red.${this.device.webP ? 'webp' : 'png'}`;
           } else {
-            this.logoImage = '/assets/logo.png';
+            this.logoImage = `/assets/logo.${this.device.webP ? 'webp' : 'png'}`;
           }
         }
       });

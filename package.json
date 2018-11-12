@@ -33,6 +33,8 @@
     "angular2-counto": "^1.2.5",
     "core-js": "^2.5.7",
     "granim": "^1.1.1",
+    "imagemin": "^6.0.0",
+    "imagemin-webp": "^4.1.0",
     "ng-scrollreveal": "^2.2.0",
     "rxjs": "^6.3.3",
     "scrollmagic": "^2.0.6",

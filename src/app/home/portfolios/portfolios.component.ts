@@ -26,6 +26,7 @@ export class PortfoliosComponent implements OnInit {
         this.isHome = Boolean(value.url === '/');
       }
     });
+    this.portfolio.getItems();
     this.items = this.portfolio.items;
   }
 

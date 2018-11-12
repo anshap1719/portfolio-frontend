@@ -54,6 +54,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.device.hasWebPSupport();
     this.isHome = this.router.url === '/';
     this.router.events.subscribe(value => {
       if (value instanceof NavigationEnd) {

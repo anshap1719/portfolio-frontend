@@ -1,6 +1,6 @@
 <div class="horizontal-flex align-center hide-on-init" ngsReveal [@.disabled]="isMobile" [class.mobile]="isMobile">
   <div class="image" [@image]="urlState" (@image.start)="changeAnimateImageState($event)" [style.text-align]="imageMargin" [style.padding-left]="imagePadding">
-    <img src="/assets/me.png" alt="" [@animateImage]="{value: animateImage, params: { width: width }}">
+    <img [src]="supportsWebP ? '/assets/me.webp' : '/assets/me.png'" alt="" [@animateImage]="{value: animateImage, params: { width: width }}">
   </div>
   <div class="content" [@text]="{value: urlState, params: { scale: scale }}" (@text.start)="changeAnimateTextState($event)">
     <div class="outer">
