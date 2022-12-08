@@ -19,7 +19,7 @@
     "@ngx-lite/json-ld": "^0.4.2",
     "core-js": "^2.5.7",
     "countup.js-angular2": "^6.0.1",
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "firebase-admin": "~5.13.0",
     "firebase-functions": "^2.0.0",
     "granim": "^1.1.1",
